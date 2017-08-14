@@ -1,0 +1,155 @@
+.Footer {
+    border-top: 1px solid $c-neutroLight;
+    color: $c-neutroDark;
+
+    .Footer-legalWrapper {
+        border-top: 1px solid $c-neutroLight;
+    }
+
+    .Footer-wrapper {
+        .Footer-info {
+            align-items: center;
+            padding-bottom: space(.25);
+            padding-top: space();
+            text-align: center;
+            width: 100%;
+
+            @include breakpoint($s960) {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: space();
+                padding-top: space();
+                text-align: left;
+            }
+
+            .Footer-infoLogo,
+            .Footer-infoLinks,
+            .Footer-infoSocial {
+                display: block;
+                margin-bottom: space();
+
+                @include breakpoint($s960) {
+                    display: inline-block;
+                    margin-bottom: 0;
+                }
+
+                li {
+                    display: inline-block;
+
+                    a {
+                        color: $c-neutroDark;
+
+                        &:hover {
+                            color: $c-primaryDark;
+                        }
+                    }
+                }
+            }
+
+            .Footer-infoLogo {
+                display: none;
+
+                @include breakpoint($s960) {
+                    display: inline-block;
+                }
+            }
+
+            .Footer-infoLinks {
+                li {
+                    display: block;
+                    margin-bottom: space(.5);
+                    margin-left: 0;
+
+                    @include breakpoint($s480) {
+                        display: inline-block;
+                        margin-bottom: 0;
+                        margin-left: space();
+                    }
+
+                    @include breakpoint($s1024) {
+                        margin-left: space(2);
+                    }
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+
+            .Footer-infoSocial {
+                li {
+                    margin-left: get-rems(10px);
+                }
+
+                .Footer-infoSocial-icon {
+                    img {
+                        @include icon (32px, 40px);
+                    }
+                }
+
+                .blog {
+                    background-color: transparent;
+                    display: block;
+                    margin-top: get-rems(5px);
+                    text-align: center;
+                    width: auto;
+
+                    .blog-item {
+                        background-color: $c-primaryDark;
+                        border-radius: get-rems(18px);
+                        display: inline-block;
+                        padding: space(.25) space(.75);
+
+                        a {
+                            color: $c-white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .Footer-legal {
+            padding-bottom: space();
+            padding-top: space();
+            text-align: center;
+
+            @include breakpoint($s1200) {
+                display: flex;
+                justify-content: space-between;
+                text-align: left;
+            }
+
+            .Footer-legalInfo,
+            .Footer-legalLinks {
+                display: inline-block;
+                font-size: get-rems(12px);
+                margin: 0;
+                padding: 0;
+            }
+
+            .Footer-legalInfo {
+                margin-bottom: space(.75);
+
+                @include breakpoint($s1200) {
+                    margin-bottom: 0;
+                }
+            }
+
+            .Footer-legalLinks {
+                li {
+                    display: inline-block;
+                    margin-left: space(.25);
+                    text-transform: uppercase;
+
+                    a {
+                        color: $c-neutroDark;
+
+                        &:hover {
+                            color: $c-primaryDark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

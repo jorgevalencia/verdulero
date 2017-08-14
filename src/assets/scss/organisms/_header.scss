@@ -1,0 +1,302 @@
+.Header {
+    display: none;
+    position: relative;
+    z-index: 10;
+
+    @include breakpoint($s960) {
+        display: block;
+    }
+
+    .Header-container {
+        align-items: stretch;
+        display: flex;
+        justify-content: space-between;
+        position: static;
+    }
+
+    .Header-link {
+        align-items: center;
+        display: flex;
+        line-height: 1.2;
+        margin-right: get-rems(1px);
+        padding: 0 space(.5);
+        text-align: center;
+    }
+
+    .Header-top {
+        background-color: $c-primaryDark;
+        height: space(2);
+
+        .Header-topLink {
+            color: $c-white;
+
+            &:hover {
+                background-color: $c-primary;
+            }
+
+            &.is-selected {
+                background-color: $c-primary;
+            }
+        }
+
+        .Header-corporate {
+            align-items: stretch;
+            display: flex;
+
+            li {
+                display: flex;
+            }
+        }
+
+        .Header-SmallLinks {
+            align-items: stretch;
+            display: flex;
+
+            .SmallLinks-laCaixa {
+                display: flex;
+            }
+
+            .SmallLinks-LangSelect {
+                display: flex;
+                justify-content: center;
+                margin-left: space(.5);
+                position: relative;
+
+                .icon-lang img {
+                    display: flex;
+                    margin-right: space(.25);
+
+                    @include icon (currentColor, 24px, 24px);
+                }
+            }
+
+            .SmallLinks-LangTitle {
+                background-color: $c-primaryDark;
+                color: $c-white;
+                display: flex;
+                justify-content: center;
+                padding: 0 space(.25);
+                z-index: 20;
+
+                .icon-arrow {
+                    display: flex;
+                    margin-left: space(.25);
+                    transform: rotate(90deg);
+
+                    img {
+                        height: get-rems(10px);
+                        width: get-rems(10px);
+                    }
+                }
+
+                &.is-active {
+                    background-color: $c-primary;
+
+                    .icon-arrow {
+                        transform: rotate(270deg);
+                    }
+                }
+
+                &.Header-lang-notActive {
+                    background-color: $c-primary;
+                    height: space(2);
+                }
+
+                & span {
+                    align-self: center;
+                    display: flex;
+                }
+            }
+
+            .SmallLinks-Lang {
+                background: $c-primary;
+                display: flex;
+                left: 0;
+                position: absolute;
+                top: 0;
+                transition: $global-animation;
+                width: 100%;
+                z-index: 10;
+
+                &.is-open {
+                    top: space(2);
+                }
+
+                &::before {
+                    background: $c-primaryDark;
+                    content: '';
+                    height: get-rems(1px);
+                    left: 50%;
+                    position: absolute;
+                    top: 0;
+                    transform: translateX(-50%);
+                    width: space();
+                }
+
+                & span {
+                    align-self: center;
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .Header-main {
+        background: $c-white;
+        border-bottom: 1px solid $c-neutroLight;
+        height: space(2.5);
+    }
+
+    .Header-logo {
+        display: flex;
+        flex: 0 0 200px;
+        height: space(2.5);
+
+        .vidacaixa-logo {
+            display: flex;
+        }
+
+        img {
+            align-self: center;
+            display: flex;
+            height: get-rems(31px);
+            width: get-rems(164px);
+        }
+    }
+
+    .Header-Products {
+        align-items: stretch;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        .Header-ProductsLink {
+            border-bottom: solid get-rems(4px) transparent;
+            bottom: get-rems(-4px);
+            color: $c-black;
+            padding-left: space();
+            padding-right: space();
+            position: relative;
+
+            &::after {
+                align-self: center;
+                background: $c-neutroLight;
+                content: '';
+                height: space(1.5);
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: get-rems(1px);
+            }
+
+            &.is-last {
+                &::after {
+                    display: none;
+                }
+            }
+
+            &:hover,
+            &.is-selected {
+                color: $c-secondary;
+
+                &::before {
+                    border-bottom: solid get-rems(4px) $c-secondary;
+                    bottom: 0;
+                    content: "";
+                    height: .5em;
+                    left: 50%;
+                    position: absolute;
+                    transform: translateX(-50%);
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    .Header-productsMenu {
+        align-items: stretch;
+        background-color: $c-neutroLightest;
+        border-bottom: 1px solid $c-neutroLighter;
+        display: flex;
+        height: space(2.5);
+        justify-content: center;
+        left: 0;
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        transition: $global-animation;
+        width: 100%;
+        z-index: -10;
+
+        &.is-open {
+            top: space(4.5);
+        }
+
+        .Header-productsContainer {
+            align-items: flex-start;
+            display: flex;
+        }
+
+        .Header-productsItem {
+            background-color: $c-neutroLightest;
+            color: $c-black;
+            font-size: get-rems(15px);
+            position: relative;
+
+            .icon-prod {
+                display: flex;
+                margin-right: space(.25);
+
+                img {
+                    margin-left: 0;
+
+                    @include icon ($c-secondary, 30px, 30px);
+                }
+            }
+
+            &.is-selected,
+            &:hover {
+                background-color: $c-neutroLighter;
+                border-left: none;
+            }
+        }
+    }
+
+    .Header-search {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex: 0 0 25%;// pon get-rem(~px);
+        height: space(2.5);// look up
+        justify-content: flex-end;
+        order: 5;
+        padding: 0;
+        position: relative;
+        top: 0;
+        z-index: 0;
+
+        .Header-searchBar {
+            background-color: $c-neutroLightest;
+            border: solid get-rems(1px) $c-neutroLight;
+            border-radius: get-rems(50px);
+            display: block;
+            height: space(1.5);
+            margin: 0;
+            padding: 0 space(2) 0 space();
+            width: 100%;
+        }
+
+        .Header-searchButton {
+            position: absolute;
+            right: get-rems(20px);
+            top: 50%;
+            transform: translateY(-50%);
+
+            img {
+                height: get-rems(22px);
+                width: get-rems(22px);
+            }
+        }
+    }
+}

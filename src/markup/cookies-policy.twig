@@ -1,0 +1,46 @@
+{% set locale = 'es' %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="Basic-page Blog-post">
+    <div class="Blog-header u-wrapper is-reading">
+        {% include 'molecules/breadcrumb.twig' with {
+            breadcrumb: ['Inicio','Sala de prensa','VidaCaixa crece por encima del sector'],
+            class: 'is-dark'
+        } %}
+        <h1 class="Blog-title">Política de cookies</h1>
+    </div>
+    <div class="u-wrapper is-reading Blog-content">
+        <h3>¿Qué son las cookies?</h3>
+        <p>Las cookies son pequeños archivos o dispositivos que se descargan en el equipo terminal del usuario al acceder a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, recordar las preferencias del usuario como el idioma seleccionado, datos de acceso o personalización de la página.</p>
+        <h3>¿Qué tipos de cookies se utiliza en este Sitio web?</h3>
+        <p>Le informamos que en este Sitio web se utilizan cookies con la finalidad de ejecutar las comunicaciones electrónicas propias de la navegación, así como con la finalidad de prestar o habilitar los servicios o funcionalidades por Usted solicitados. Estas cookies:</p>
+        <ul>
+            <li>Recuerdan la preferencia de idioma señalada.</li>
+            <li>Aumentan la seguridad de la navegación en nuestro sitio web.</li>
+            <li>Permiten que la navegación se realice más fácilmente.</li>
+            <li>Posibilitan la reproducción de contenidos multimedia.</li>
+        </ul>
+        <p>Este Sitio web también utiliza cookies propias, destinadas a recopilar información sobre la navegación de los usuarios en el sitio, de forma totalmente anónima y disociada, con finalidades estrictamente estadísticas y de mejora de su funcionalidad, cuyo uso nos permite:</p>
+        <ul>
+            <li>Conocer el número de visitantes del Sitio Web</li>
+            <li>Contabilizar el número de visitas en cada una de las diferentes páginas de este Sitio web</li>
+            <li>Conocer la actividad en el Sitio web para la identificación de problemas y mejoras en la navegación</li>
+        </ul>
+        <p>Usted puede desactivar el uso de cookies en cualquier momento mediante la modificación de los parámetros de configuración de su navegador:</p>
+        <p>Para la <a class="link-external" href="http://windows.microsoft.com/es-es/windows-vista/block-or-allow-cookies" target="_blank">configuración de cookies de Internet Explorer</a><br>
+        Para la <a class="link-external" href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we" target="_blank">configuración de cookies de Firefox</a><br>
+        Para la <a class="link-external" href="http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647" target="_blank">configuración de cookies de Google Chrome</a><br>
+        Para la <a class="link-external" href="http://support.apple.com/kb/HT1677?viewlocale=es_ES&amp;locale=es_ES" target="_blank">configuración de cookies de Safari</a></p>
+    </div>
+</div>
+
+{% include 'organisms/contact-bar.twig' with {
+    background: 'primary',
+    classes: 'no-margin'
+} %}
+
+{% endblock %}

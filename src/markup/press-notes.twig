@@ -1,0 +1,78 @@
+{% set locale = 'es' %}
+
+<!--MENU - Selected items-->
+{% set menu_infcorp = '' %}
+{% set menu_particulares = '' %}
+{% set menu_p_seguro = '' %}
+{% set menu_p_pensiones = '' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+{% set menu_press = 'is-selected' %}
+
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="Press-notes u-wrapper is-collapse u-flex--wrap">
+    <div class="u-flex--s0-12 u-flex--s960-4">
+        {% include 'organisms/sidemenu.twig' %}
+    </div>
+    <div class="u-flex--s0-12 u-flex--s960-1">
+    </div>
+    <div class="has-sidebar u-wrapper u-flex--s0-12 u-flex--s960-6 u-flex--s1440-7">
+        {% include 'organisms/billboard-text.twig' with {
+            title: 'Notas de prensa',
+            marginBottom: 'small'
+        } %}
+        {% include 'organisms/filter.twig' with {
+            breadcrumbVisible: false,
+            selects: true
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2017 Diciembre 14',
+            link_title: 'VidaCaixa recibe el premio al mejor fondo de pensiones de renta variable'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-2',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2017 Noviembre 25',
+            link_title: 'Pensions Caixa 30, gestionado por VidaCaixa, galardonado como el mejor fondo de pensiones español de 2012'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-3',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2017 Octubre 30',
+            link_title: 'Aprobación por Consejo Administración de la Sociedad del inicio del proceso de amortización del 100% de su valor nominal de la "2ª Emisión de Obligaciones Subordinadas de VidaCaixa, S.A. de Seguros y Reaseguros (dic 2004)", Código ISIN ES0283691014'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2017 Diciembre 14',
+            link_title: 'VidaCaixa recibe el premio al mejor fondo de pensiones de renta variable'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-2',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2017 Noviembre 25',
+            link_title: 'Pensions Caixa 30, gestionado por VidaCaixa, galardonado como el mejor fondo de pensiones español de 2012'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-3',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2017 Octubre 30',
+            link_title: 'Aprobación por Consejo Administración de la Sociedad del inicio del proceso de amortización del 100% de su valor nominal de la "2ª Emisión de Obligaciones Subordinadas de VidaCaixa, S.A. de Seguros y Reaseguros (dic 2004)", Código ISIN ES0283691014'
+        } %}
+    </div>
+</div>
+
+{% endblock %}

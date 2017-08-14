@@ -1,0 +1,112 @@
+.Newsletter {
+    &.is-oneThird {
+        margin-bottom: space(1.25);
+
+        .Newsletter-text {
+            margin-bottom: space(.75);
+
+            @include breakpoint($s960) {
+                flex: 1;
+                margin-bottom: 0;
+            }
+        }
+
+        .Newsletter-form {
+            @include breakpoint($s960) {
+                flex: 2;
+            }
+        }
+    }
+
+    &.is-halfHalf {
+        .Newsletter-text {
+            margin-bottom: space(.75);
+
+            @include breakpoint($s960) {
+                flex: 1;
+                margin-bottom: 0;
+            }
+        }
+
+        .Newsletter-form {
+            @include breakpoint($s960) {
+                flex: 1;
+            }
+        }
+    }
+
+    .Newsletter-container {
+        background-color: $c-white;
+        border: 1px solid $c-neutroLight;
+        border-radius: get-rems(6px);
+        padding: space(.75);
+
+        @include breakpoint($s480) {
+            padding: space() space(1.5) space(.25) space(1.5);
+        }
+
+        @include breakpoint($s960) {
+            align-items: flex-start;
+            display: flex;
+        }
+    }
+
+    .Newsletter-form {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 0;
+
+        @include breakpoint($s960) {
+            padding-left: get-rems(60px);
+        }
+
+        .Newsletter-formInput {
+            background-color: $c-neutroLightest;
+            border: 1px solid $c-neutroLight;
+            border-radius: get-rems(6px);
+            height: get-rems(40px);
+            margin-bottom: space(.5);
+            padding: get-rems(10px) get-rems(20px);
+            width: 100%;
+
+            @include breakpoint($s640) {
+                width: calc(100% - 168px - 10px);
+            }
+        }
+
+        .Newsletter-formSubmit {
+            background-color: $c-primary;
+            border: none;
+            border-radius: get-rems(6px);
+            color: $c-white;
+            font-size: get-rems(18px);
+            height: get-rems(40px);
+            margin-bottom: get-rems(20px);
+            margin-top: 0;
+            width: 100%;
+
+            @include breakpoint($s640) {
+                width: get-rems(168px);
+            }
+        }
+
+        .Newsletter-formCheck {
+            align-items: center;
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+
+            .Newsletter-formCheck-input {
+                height: get-rems(16px);
+                margin: 0 get-rems(5px) 0 0;
+                width: get-rems(16px);
+            }
+
+            .Newsletter-formCheck-terms {
+                font-size: get-rems(12px);
+            }
+        }
+    }
+}

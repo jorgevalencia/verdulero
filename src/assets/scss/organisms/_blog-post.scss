@@ -1,0 +1,218 @@
+.Blog-postWrapper {
+    @include breakpoint($s960) {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.Blog-post {
+    @include breakpoint($s960) {
+        padding: space(3) 0;
+    }
+
+    .Blog-header {
+        .Blog-title {
+            margin-bottom: space();
+        }
+
+        .Blog-info {
+            align-items: center;
+            color: $c-neutro;
+            font-size: get-rems(13px);
+            justify-content: space-between;
+            margin-bottom: space();
+            text-transform: uppercase;
+
+            @include breakpoint($s640) {
+                display: flex;
+            }
+
+            .Blog-infoDate {
+                margin-bottom: space(.5);
+
+                @include breakpoint($s640) {
+                    margin-bottom: 0;
+                }
+            }
+
+            .Blog-infoSocial {
+                li {
+                    display: inline-block;
+                }
+
+                .text {
+                    margin-right: get-rems(8px);
+                    position: relative;
+                    top: get-rems(-6px);
+                }
+
+                .item {
+                    margin-right: space(.25);
+
+                    img {
+                        height: get-rems(28px);
+                        width: get-rems(28px);
+                    }
+                }
+            }
+        }
+    }
+
+    .Blog-mainImage {
+        margin-bottom: space();
+    }
+
+    .Blog-content {
+        margin-top: space();
+
+        img {
+            border-radius: get-rems(5px);
+            margin-bottom: space(1.25);
+            width: 100%;
+        }
+        // stylelint-disable
+        quote {
+        // stylelint-enable
+            @include fluid-type(18px, 25px);
+
+            border-left: solid 1px $c-primary;
+            display: block;
+            font-style: italic;
+            line-height: 1.4;
+            margin: space(2) auto;
+            padding-left: space(.5);
+
+            @include breakpoint($s480) {
+                padding-left: space(1.25);
+            }
+        }
+
+        i {
+            font-style: italic;
+        }
+
+        strike {
+            text-decoration: line-through;
+        }
+
+        ul, ol {
+            margin-bottom: space();
+
+            @include breakpoint($s640) {
+                margin-bottom: space(2);
+            }
+
+            li {
+                @include fluid-type(16px, 18px);
+
+                margin-bottom: space(.5);
+                padding-left: space();
+                position: relative;
+
+                &::before {
+                    background-color: $c-primaryDark;
+                    border-radius: 100%;
+                    content: '';
+                    display: block;
+                    height: get-rems(7px);
+                    left: 0;
+                    position: absolute;
+                    top: get-rems(10px);
+                    width: get-rems(7px);
+                }
+            }
+        }
+
+        ol {
+            padding-left: space(.5);
+
+            li {
+                list-style-type: decimal;
+                padding-left: space(.5);
+
+                &::before {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+.wysiwyg {
+    margin-bottom: space();
+
+    @include breakpoint($s960) {
+        margin-bottom: space(2);
+    }
+
+    img {
+        border-radius: get-rems(5px);
+        margin-bottom: space(1.25);
+        width: 100%;
+    }
+    // stylelint-disable
+    quote {
+        // stylelint-enable
+        @include fluid-type(18px, 25px);
+
+        border-left: solid 1px $c-primary;
+        display: block;
+        font-style: italic;
+        line-height: 1.4;
+        margin: space(2) auto;
+        padding-left: space(.5);
+
+        @include breakpoint($s480) {
+            padding-left: space(1.25);
+        }
+    }
+
+    i {
+        font-style: italic;
+    }
+
+    strike {
+        text-decoration: line-through;
+    }
+
+    ul, ol {
+        margin-bottom: space();
+
+        @include breakpoint($s640) {
+            margin-bottom: space(2);
+        }
+
+        li {
+            @include fluid-type(16px, 18px);
+
+            margin-bottom: space(.5);
+            padding-left: space();
+            position: relative;
+
+            &::before {
+                background-color: $c-primaryDark;
+                border-radius: 100%;
+                content: '';
+                display: block;
+                height: get-rems(7px);
+                left: 0;
+                position: absolute;
+                top: get-rems(10px);
+                width: get-rems(7px);
+            }
+        }
+    }
+
+    ol {
+        padding-left: space(.5);
+
+        li {
+            list-style-type: decimal;
+            padding-left: space(.5);
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+}

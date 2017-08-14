@@ -1,0 +1,7 @@
+.Basic-page {
+    padding-top: space();
+
+    @include breakpoint($s960) {
+        padding-top: 0;
+    }
+}

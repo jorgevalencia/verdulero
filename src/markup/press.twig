@@ -1,0 +1,52 @@
+{% set locale = 'es' %}
+
+<!--MENU - Selected items-->
+{% set menu_infcorp = '' %}
+{% set menu_particulares = '' %}
+{% set menu_p_seguro = '' %}
+{% set menu_p_pensiones = '' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+{% set menu_press = 'is-selected' %}
+
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="Press">
+    <div class="Press-main">
+        <div class="Press-mainWrapper u-wrapper">
+            {% include 'molecules/breadcrumb.twig' with {
+            breadcrumb: ['Inicio','Sala de prensa'],
+            class: 'is-dark'
+            } %}
+            {% include 'organisms/slider.twig' %}
+            {% include 'organisms/notes.twig' %}
+        </div>
+    </div>
+    <div class="Press-links u-wrapper">
+        {% include 'organisms/distributor.twig' %}
+        {% include 'organisms/newsletter.twig' with {
+        type: 'is-oneThird',
+        title: 'Newsletter',
+        description: 'Suscríbete a nuestra newsletter y entérate de las últimas noticias de la compañia.',
+        placeholder: 'Introduce tu email',
+        link: '#'
+        } %}
+        {% include 'organisms/contact-business.twig' %}
+    </div>
+    <div class="Press-footer">
+        <div class="Press-footerWrapper u-wrapper">
+            {% include 'organisms/social-networks.twig' %}
+            {% include 'organisms/blog.twig' %}
+        </div>
+    </div>
+    {% include 'organisms/contact-bar.twig' with {
+        background: 'primary',
+        classes: 'no-margin'
+    } %}
+</div>
+
+{% endblock %}

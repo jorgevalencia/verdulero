@@ -1,0 +1,40 @@
+.Soluciones-item {
+    border-top: 1px solid $c-neutroLight;
+    padding-bottom: space(1.5);
+    padding-top: space(1.5);
+
+    &:last-child {
+        border-bottom: 1px solid $c-neutroLight;
+        margin-bottom: space(1.5);
+    }
+
+    @include breakpoint($s960) {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: space(.5);
+    }
+
+    .Soluciones-itemFlex {
+        @include breakpoint($s960) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .Soluciones-itemInfo {
+        flex-basis: 48%;
+
+        &:last-child {
+            margin-bottom: space(.5);
+
+            @include breakpoint($s960) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .Soluciones-itemContent {
+        flex-basis: get-rems(600px);
+    }
+}

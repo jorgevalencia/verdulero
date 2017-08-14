@@ -1,0 +1,57 @@
+{% set locale = 'es' %}
+<!--MENU - Selected items-->
+{% set menu_infcorp = '' %}
+{% set menu_particulares = 'is-selected' %}
+{% set menu_p_seguro = '' %}
+{% set menu_p_pensiones = '' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+{% block html_id %}section-Particulares{% endblock %}
+{% block Main_classes %}Main-Productos{% endblock %}
+
+{% block content %}
+
+<div class="Home">
+
+{% include 'organisms/featured.twig' %}
+
+{# {% include 'organisms/billboard-simple.twig' with {
+    background: 'billboard-empresas.jpg',
+    subtitle: 'Empresas',
+    title: 'Soluciones a medida para empresas y colectivos'
+} %} #}
+
+{% include 'organisms/search.twig' with {
+    background: 'banner1-img.jpg',
+} %}
+
+{% include 'organisms/contact-bar.twig' with {
+    background: 'white'
+} %}
+
+<div class="BlogWrapper">
+    <div class="u-wrapper">
+        {% include 'organisms/blog-with-filter.twig' with {
+            blogSubtitle: 'Temas que te pueden interesar',
+            marginBottom: false
+        } %}
+    </div>
+</div>
+
+{% include 'organisms/banner.twig' with {
+    class: 'u-marginBlocks'
+} %}
+
+{% include 'organisms/highlights.twig' with {
+    class: 'u-wrapper'
+} %}
+
+{% include 'organisms/contact-bar.twig' with {
+    background: 'primary',
+    classes: 'no-margin'
+} %}
+
+{% endblock %}

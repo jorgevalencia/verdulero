@@ -1,0 +1,39 @@
+{% set locale = 'es' %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="">
+    {% include 'organisms/billboard-simple.twig' with {
+        background: 'empresas-billboard.jpg',
+        subtitle: 'Empresas',
+        title: 'Plataforma Integral de Previsón Social'
+    } %}
+    <div class="u-wrapper is-reading">
+
+        {% include 'organisms/form-login.twig' %}
+
+        <div class="wysiwyg">
+            <h3>¿Qué es e-Gestión VidaCaixa?</h3>
+            <p>e-Gestión VidaCaixa es una herramienta informática on-line destinada a clientes y mediadores de colectivos de VidaCaixa en materia de previsión social empresarial.</p>
+            <p>Esta herramienta es una plataforma tecnológica que apuesta por la innovación para que usted tenga acceso a toda la información relevante sobre sus contratos. Permite la consulta y la gestión de los contratos a través de internet y cuenta con la valiosa experiencia profesional de VidaCaixa Previsión Social, disponible 24h.</p>
+            <h3>Características</h3>
+            <ul>
+                <li>Diseñado para productos de riesgo y ahorro</li>
+                <li>Entorno seguro, total confidencialidad de los datos</li>
+                <li>Optimiza los procesos de gestión de pólizas</li>
+                <li>Servicio totalmente gratuito</li>
+            </ul>
+            <p>e-Gestión VidaCaixa es una herramienta para seguros de riesgo a nivel colectivo, no siendo posible el alta para asegurados individuales, ni para seguros de jubilación ni planes de pensiones. En relación a éstos, es posible tener acceso a través de Línea Abierta de “la Caixa”.</p>
+            <a class="Button Button--solid bg-primary" href="#"><span>Más información</span></a>
+        </div>
+    </div>
+    {% include 'organisms/contact-bar.twig' with {
+        background: 'primary',
+        classes: 'no-margin'
+    } %}
+</div>
+
+{% endblock %}

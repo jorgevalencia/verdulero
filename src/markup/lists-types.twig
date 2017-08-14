@@ -1,0 +1,114 @@
+{% set locale = 'es' %}
+
+<!--MENU - Selected items-->
+{% set menu_infcorp = '' %}
+{% set menu_particulares = '' %}
+{% set menu_p_seguro = '' %}
+{% set menu_p_pensiones = '' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="u-wrapper is-reading">
+    {% include 'organisms/billboard-text.twig' with {
+        title: 'Listas de enlaces y descargables'
+    } %}
+    <div class="u-marginBlocks">
+        <h4 class="t-h4">Enlaces y descargables</h4>
+        {% include 'molecules/listLinks.twig' with {
+            link_title: 'Descargar Resultados Anuales 2006 (PDF 897 Kb.)',
+            icon_name: 'download'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            link_title: 'Resultados Anuales 2007',
+            icon_name: 'download'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            link_title: 'Resultados anuales 2016 VidaCaixa Grupo',
+            icon_name: 'link'
+        } %}
+    </div>
+    <div class="u-marginBlocks">
+        <h4 class="t-h4">Enlaces y descargables con fecha</h4>
+        {% include 'molecules/listLinks.twig' with {
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2014 Mayo 13',
+            link_title: 'Informe de gobierno corporativo de 2013 (PDF 3,69 MB)',
+            icon_name: 'link'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2015 Junio 26',
+            link_title: 'Amortización total de la "2ª Emisión de Obligaciones Perpetuas Subordinadas de VIDACAIXA, S.A. de Seguros y Reaseguros (Diciembre 2004)" Código ISIN ES0283691014',
+            icon_name: 'link'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2015 Abril 26',
+            link_title: 'Aprobación por Consejo Administración de la Sociedad del inicio del proceso de amortización del 100% de su valor nominal de la "2ª Emisión de Obligaciones Subordinadas de VidaCaixa, S.A. de Seguros y Reaseguros (dic 2004)", Código ISIN ES0283691014 ',
+            icon_name: 'download'
+        } %}
+    </div>
+    <div class="u-marginBlocks">
+        <h4 class="t-h4">Enlaces con foto</h4>
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2017 Diciembre 14',
+            link_title: 'VidaCaixa recibe el premio al mejor fondo de pensiones de renta variable'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-2',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2017 Noviembre 25',
+            link_title: 'Pensions Caixa 30, gestionado por VidaCaixa, galardonado como el mejor fondo de pensiones español de 2012'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-3',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: '2017 Octubre 30',
+            link_title: 'Aprobación por Consejo Administración de la Sociedad del inicio del proceso de amortización del 100% de su valor nominal de la "2ª Emisión de Obligaciones Subordinadas de VidaCaixa, S.A. de Seguros y Reaseguros (dic 2004)", Código ISIN ES0283691014'
+        } %}
+    </div>
+    <div class="u-marginBlocks">
+        <h4 class="t-h4">Fotos y videos descargables</h4>
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-download',
+            class_subtitle: 'is-bold',
+            link_subtitle: 'Gonzalo Gortázar',
+            link_title: 'Presidente VidaCaixa',
+            icon_name: 'download'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-media-download',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'JPG (546 KB)',
+            link_title: 'Logo VidaCaixa',
+            icon_name: 'download'
+        } %}
+        {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-video-download',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'MP4 (2 MB)',
+            link_title: 'Video VidaCaixa',
+            icon_name: 'download'
+        } %}
+    </div>
+</div>
+
+{% include 'organisms/contact-bar.twig' with {
+    background: 'primary',
+    classes: 'no-margin'
+} %}
+
+{% endblock %}

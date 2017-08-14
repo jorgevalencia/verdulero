@@ -1,0 +1,128 @@
+.Message {
+    background-color: $c-neutroLightest;
+    border: 1px solid $c-neutroLighter;
+    border-radius: $global-radius;
+    color: $c-neutroDark;
+    font-size: get-rems(18px);
+    justify-content: center;
+    max-width: get-rems(720px);
+    padding: space() space(1.5);
+    position: relative;
+    width: 100%;
+
+    @include breakpoint($s480) {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .Message-icon {
+        background-color: $c-white;
+        border-radius: 50%;
+        display: block;
+        height: get-rems(33px);
+        margin: 0 auto space(.5);
+        padding: get-rems(6px);
+        width: get-rems(33px);
+
+        img {
+            height: get-rems(22px);
+            width: get-rems(22px);
+        }
+
+        @include breakpoint($s480) {
+            margin: 0 space() 0 0;
+        }
+    }
+
+    .u-icon {
+        fill: currentColor;
+        height: get-rems(20px);
+        width: get-rems(20px);
+    }
+
+    .Message-content {
+        width: 100%;
+    }
+
+    &.Message--success {
+        background-color: $c-success;
+        border-color: $c-success;
+        color: $c-white;
+
+        .u-icon {
+            fill: $c-success;
+        }
+    }
+
+    &.Message--alert {
+        background-color: $c-alert;
+        border-color: $c-alert;
+        color: $c-neutroDark;
+
+        .u-icon {
+            fill: $c-alert;
+        }
+    }
+
+    &.Message--error {
+        background-color: $c-error;
+        border-color: $c-error;
+        color: $c-white;
+
+        .u-icon {
+            fill: $c-error;
+        }
+    }
+
+    &.Message--tooltip {
+        background-color: $c-primaryDark;
+        border-color: $c-primaryDark;
+        color: $c-white;
+
+        &::before {
+            border-color: transparent transparent $c-primaryDark;
+            border-style: solid;
+            border-width: 0 get-rems(12px) get-rems(12px);
+            content: '';
+            height: 0;
+            left: 50%;
+            position: absolute;
+            top: get-rems(-12px);
+            transform: translateX(-50%);
+            width: 0;
+        }
+    }
+
+    &.Message--search {
+        background-color: $c-neutroLightest;
+        border-color: $c-neutroLighter;
+        position: relative;
+
+        &::before {
+            background-color: $c-neutroLightest;
+            border-color: $c-neutroLighter transparent transparent $c-neutroLighter;
+            border-style: solid;
+            border-width: get-rems(1px) 0 0 get-rems(1px);
+            content: '';
+            height: 16px;
+            left: 50%;
+            position: absolute;
+            top: get-rems(-9px);
+            transform: translateX(-50%) rotate(45deg);
+            width: 16px;
+        }
+
+        &::after {
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2);
+            content: '';
+            height: 16px;
+            left: 50%;
+            position: absolute;
+            top: get-rems(-9px);
+            transform: translateX(-50%) rotate(45deg);
+            width: 16px;
+            z-index: -10;
+        }
+    }
+}

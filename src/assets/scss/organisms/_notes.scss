@@ -1,0 +1,113 @@
+.Notes {
+    margin-bottom: space(2);
+
+    .Notes-wrapper {
+        justify-content: space-between;
+        margin-bottom: space(1.5);
+
+        @include breakpoint($s960) {
+            display: flex;
+        }
+
+        .Notes-item {
+            border: none;
+            border-bottom: solid 1px $c-neutroLight;
+            border-radius: 0;
+            color: $c-neutroDark;
+            display: block;
+            margin-bottom: space();
+            position: relative;
+            transition: $global-animation;
+            width: 100%;
+
+            &:hover {
+                background-color: $c-neutroLightest;
+            }
+
+            @include breakpoint($s960) {
+                background-color: $c-white;
+                border: solid 1px $c-neutroLight;
+                border-bottom: nonex;
+                border-radius: get-rems(5px);
+                margin-bottom: 0;
+                width: 24%;
+            }
+
+            @include breakpoint($s1200) {
+                width: 23%;
+            }
+
+            .image {
+                border-radius: get-rems(5px);
+                height: get-rems(140px);
+                overflow: hidden;
+                position: relative;
+
+                @include breakpoint($s640) {
+                    height: get-rems(190px);
+                }
+
+                @include breakpoint($s960) {
+                    border-radius: 0;
+                }
+
+                img {
+                    height: auto;
+                    left: 50%;
+                    max-width: none;
+                    position: relative;
+                    top: 0;
+                    transform: translateX(-50%);
+                    width: 100%;
+
+                    @include breakpoint($s960) {
+                        height: 100%;
+                        position: absolute;
+                        width: auto;
+                    }
+                }
+            }
+
+            .content {
+                padding: space(.75) 0;
+
+                @include breakpoint($s960) {
+                    padding: space(.5) space(.75);
+                }
+
+                @include breakpoint($s1200) {
+                    padding: space(.75) space();
+                }
+
+                .date {
+                    color: $c-neutro;
+                    display: block;
+                    font-size: get-rems(13px);
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    margin-bottom: get-rems(5px);
+                    text-transform: uppercase;
+                }
+
+                .description {
+                    color: $c-primary;
+                    font-size: get-rems(16px);
+                    line-height: 1.5;
+                    margin-bottom: 0;
+
+                    @include breakpoint($s960) {
+                        color: $c-neutroDark;
+                    }
+                }
+            }
+        }
+    }
+
+    .Notes-CTA {
+        text-align: center;
+
+        a {
+            display: inline-block;
+        }
+    }
+}

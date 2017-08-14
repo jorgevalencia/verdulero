@@ -1,0 +1,56 @@
+.Benefits {
+    background-color: $c-neutroLightest;
+    margin-bottom: space(2);
+    padding-top: space(2);
+
+    .Benefits-container {
+        @include breakpoint($s640) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    .Benefits-title {
+        padding-bottom: space();
+        text-align: center;
+    }
+
+    .Benefits-item {
+        display: flex;
+
+        @include breakpoint($s640) {
+            margin-bottom: space();
+            width: 50%;
+        }
+
+        &:nth-child(odd) {
+            @include breakpoint($s640) {
+                padding-right: space();
+            }
+        }
+
+        &:nth-child(even) {
+            @include breakpoint($s640) {
+                padding-left: space();
+            }
+        }
+
+        .Benefits-icon {
+            flex: 0 0 24px;
+            margin-right: space(.5);
+
+            @include breakpoint($s640) {
+                flex-basis: 32px;
+            }
+
+            img {
+                @include icon (currentColor, 24px, 32px);
+            }
+        }
+
+        .Benefits-content {
+            min-width: 0;
+        }
+    }
+}

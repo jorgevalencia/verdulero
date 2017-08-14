@@ -1,0 +1,141 @@
+.BillboardSimple {
+    background: $c-neutroDark;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: space();
+    position: relative;
+    width: 100%;
+
+    @include breakpoint($s480) {
+        background: $c-neutroLighter;
+        margin-bottom: space(2);
+    }
+
+    @include breakpoint($s960) {
+        margin-bottom: space(3);
+    }
+
+    .BillboardSimple-image {
+        height: 100%;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+
+        &::before {
+            background: rgba($c-black, .3);
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 10;
+
+            @include breakpoint($s480) {
+                background: rgba($c-black, .1);
+            }
+        }
+
+        img {
+            height: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    .BillboardSimple-bradcrumb {
+        display: none;
+
+        @include breakpoint($s640) {
+            display: block;
+        }
+
+        .BillboardSimple-bradcrumbItem {
+            .Link {
+                font-size: get-rems(14px);
+                font-weight: 100;
+
+                img {
+                    margin-right: get-rems(2px);
+                    width: get-rems(8px);
+                }
+            }
+
+            &:last-child {
+                .Link {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .BillboardSimple-wrapper {
+        padding-bottom: space(1.5);
+        padding-top: space(1.5);
+
+        @include breakpoint($s480) {
+            padding-bottom: space(3);
+            padding-top: space(3);
+        }
+    }
+
+    .BillboardSimple-title,
+    .BillboardSimple-subtitle {
+        color: $c-white;
+
+        @include title-with-shadow();
+    }
+
+    .BillboardSimple-subtitle {
+        font-size: get-rems(14px);
+        margin-bottom: space(.25);
+    }
+
+    .BillboardSimple-title {
+        margin-bottom: 0;
+    }
+
+    &.BillboardText {
+        background-color: transparent;
+        margin-bottom: space(.5);
+
+        &.small {
+            @include breakpoint($s960) {
+                margin-bottom: space(1.25);
+            }
+        }
+
+        @include breakpoint($s960) {
+            margin-bottom: space(2);
+        }
+
+        &::before {
+            content: none;
+        }
+
+        .BillboardSimple-wrapper {
+            padding-bottom: 0;
+            padding-top: space();
+
+            @include breakpoint($s960) {
+                padding-top: space(3);
+            }
+        }
+
+        .BillboardSimple-title,
+        .BillboardSimple-subtitle {
+            color: $c-neutroDark;
+            text-shadow: none;
+        }
+
+        .BillboardSimple-title {
+            margin-bottom: space(.5);
+        }
+    }
+}

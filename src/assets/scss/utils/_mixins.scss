@@ -1,0 +1,155 @@
+@mixin clearfix {
+    &::after,
+    &::before {
+        content: " ";
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+}
+
+@mixin visuallyHidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@mixin videoFullWidth() {
+    height: 0;
+    padding-bottom: 56.25%;
+
+    // 16:9
+    padding-top: 25px;
+    position: relative;
+
+    iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+@mixin square($size) {
+    height: $size;
+    width: $size;
+}
+
+@mixin arrow ($fill: currentColor, $min-size: 12px, $max-size: 14px) {
+    fill: $fill;
+    height: get-rems($min-size);
+    margin-left: space(.4);
+    margin-top: get-rems(1px);
+    transition: $global-animation;
+    width: get-rems($min-size - ($min-size * .25));
+
+    @include breakpoint($s960) {
+        height: get-rems($max-size);
+        margin-left: space(.5);
+        width: get-rems($max-size - ($max-size * .25));
+    }
+}
+
+@mixin icon ($fill: currentColor, $min-size: 24px, $max-size: $min-size) {
+    fill: $fill;
+    height: get-rems($min-size);
+    transition: $global-animation;
+    width: get-rems($min-size);
+
+    @include breakpoint($s960) {
+        height: get-rems($max-size);
+        width: get-rems($max-size);
+    }
+}
+
+@mixin placeholderColor($color: $c-white, $font-weight: $t-default-regular) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-weight: $t-default-regular;
+    }
+
+    &:-moz-placeholder {
+        color: $color;
+        font-weight: $t-default-regular;
+    }
+
+    &::-moz-placeholder {
+        color: $color;
+        font-weight: $t-default-regular;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+        font-weight: $t-default-regular;
+    }
+}
+
+@mixin fluid-type($min-font-size, $max-font-size, $min-vw: 480px, $max-vw: 1440px) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        font-size: get-rems($min-font-size);
+        // line-height: get-rems($min-font-size * $base-line-height-strip);
+        line-height: $base-line-height-strip;
+
+        @media only screen and (min-width: $min-vw) {
+            font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            // line-height: calc((#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})) * #{$base-line-height-strip});
+        }
+
+        @media only screen and (min-width: $max-vw) {
+            font-size: get-rems($max-font-size);
+            // line-height: get-rems($max-font-size * $base-line-height-strip);
+        }
+    }
+
+    @else {
+        @error "Detected mixed units. Please use the same units for all parameters.";
+    }
+}
+
+@mixin breakpoint-retina() {
+    // stylelint-disable
+    @media #{$screen} and (-webkit-min-device-pixel-ratio: 2),
+        #{$screen} and (-o-min-device-pixel-ratio: 2/1),
+        #{$screen} and (min--moz-device-pixel-ratio: 2),
+        #{$screen} and (min-device-pixel-ratio: 2),
+        #{$screen} and (min-resolution: 192dpi),
+        #{$screen} and (min-resolution: 2dppx) {
+        @content;
+    }
+    // stylelint-enable
+}
+
+@mixin breakpoint($range, $orientation: '', $only: false) {
+    @if $orientation != '' {
+        $orientation: "and (orientation: #{$orientation})";
+    }
+
+    @if $only == true {
+        @media #{$screen} and (min-width: #{nth($range, 1)}) and (max-width: #{nth($range, 2)}) #{$orientation} {
+            @content;
+        }
+    }
+
+    @else {
+        @media #{$screen} and (min-width: #{nth($range, 1)}) #{$orientation} {
+            @content;
+        }
+    }
+}
+
+@mixin title-with-shadow() {
+    text-shadow: 0 2px 4px rgba($c-black, .5);
+}

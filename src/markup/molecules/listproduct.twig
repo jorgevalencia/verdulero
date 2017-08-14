@@ -1,0 +1,206 @@
+<div class="listProductItem listProductItem-{{ cols }}cols">
+    <div class="listProductItem-container">
+        {% if product_title is defined %}
+            <div class="listProductItem-cell listProductItem-title">
+                <div class="listProductItem-cellWrapper ">
+                    <h4><a href="{{ product_link | raw }}">{{ product_title }}</a></h4>
+                    {% if product_label is defined %}
+                        <span class="listProductItem-label">{{ product_label }}</span>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+        {% if product_desc is defined %}
+            <div class="listProductItem-cell listProductItem-desc">
+                <div class="listProductItem-cellWrapper">
+                    <p>{{ product_desc }}</p>
+                </div>
+            </div>
+        {% endif %}
+        {% if product_cta is defined %}
+            <div class="listProductItem-cell listProductItem-cta">
+                <div class="listProductItem-cellWrapper">
+                    <a class="Button Button--solid Button--icon bg-secondary listProductItem-button" href="{{ product_link | raw }}">
+                        <span>{{ product_cta }}</span>
+                        <span class="listProductItem-buttonTooltip">Serás redirigido a una página externa.</span>
+                        <img src="assets/img/sprites/button-icon.svg"></a>
+                </div>
+            </div>
+        {% endif %}
+        {% if QA_title is defined %}
+            <div class="listProductItem-cell listProductItem-title">
+                <div class="listProductItem-cellWrapper ">
+                    <h4><a href="#">{{ QA_title }}</a></h4>
+                    <p>{{ QA_titleInfo }}</p>
+                </div>
+            </div>
+        {% endif %}
+        {% if QA_descTitle1 is defined %}
+            <div class="listProductItem-cell listProductItem-desc">
+                <div class="listProductItem-cellWrapper">
+                    <span class=" listProductItem-desc-title">{{ QA_descTitle1 }}</span>
+                    <p>{{ QA_descInfo1 }}</p>
+                </div>
+            </div>
+        {% endif %}
+        {% if QA_descTitle2 is defined %}
+            <div class="listProductItem-cell listProductItem-desc">
+                <div class="listProductItem-cellWrapper">
+                    <span class=" listProductItem-desc-title">{{ QA_descTitle2 }}</span>
+                    <p>{{ QA_descInfo2 }}</p>
+                </div>
+            </div>
+        {% endif %}
+        {% if QA_cta is defined %}
+            <div class="listProductItem-cell listProductItem-cta">
+                <div class="listProductItem-cellWrapper">
+                    <a class="Button Button--solid bg-secondary" href="#"><span>{{ QA_cta }}</span></a>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if (cols == '5' and headings == true) %}
+                <div class="listProductItem-cell listProductItem-modal">
+                    <div class="listProductItem-cellWrapper ">
+                        <span>
+                            Modalidad
+                            <span class="listProductItem-tooltip">
+                                {% include 'riskCard.twig' %}
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="listProductItem-cell listProductItem-age">
+                    <div class="listProductItem-cellWrapper ">
+                        <span>
+                            Edad
+                            <span class="listProductItem-tooltip">
+                                {% include 'riskCard.twig' %}
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="listProductItem-cell listProductItem-risk">
+                    <div class="listProductItem-cellWrapper ">
+                        <span>
+                            Riesgo
+                            <span class="listProductItem-tooltip">
+                                {% include 'riskCard.twig' %}
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="listProductItem-cell listProductItem-desc">
+                    <div class="listProductItem-cellWrapper ">
+                        <span>Descripción</span>
+                    </div>
+                </div>
+                <div class="listProductItem-cell listProductItem-cta">
+                    <div class="listProductItem-cellWrapper ">
+                    </div>
+                </div>
+            </div>
+            <div class="listProductItem-container">
+        {% elseif (cols == '5' and headings != true) %}
+            </div>
+            <div class="listProductItem-container">
+        {% endif %}
+        {% if modal_title is defined %}
+            <div class="listProductItem-cell listProductItem-modal">
+                <div class="listProductItem-cellWrapper ">
+                    <h3><a href="{{ modal_link | raw }}">{{ modal_title }}</a></h3>
+                </div>
+            </div>
+        {% endif %}
+        {% if modal_edad is defined %}
+            <div class="listProductItem-cell listProductItem-age">
+                <div class="listProductItem-cellWrapper ">
+                    <span class="mobile">Edad
+                        <span class="listProductItem-tooltip-mobile"></span>
+                    </span>
+                    <h4>{{ modal_edad }}</h4>
+                </div>
+            </div>
+        {% endif %}
+        {% if modal_riesgo is defined %}
+            <div class="listProductItem-cell listProductItem-risk">
+                <div class="listProductItem-cellWrapper ">
+                    <span class="mobile">Riesgo
+                        <span class="listProductItem-tooltip-mobile"></span>
+                    </span>
+                    <h3>{{ modal_riesgo }}</h3>
+                </div>
+            </div>
+        {% endif %}
+        {% if modal_desc is defined %}
+            <div class="listProductItem-cell listProductItem-desc">
+                <div class="listProductItem-cellWrapper ">
+                    <div class="listProductItem-riskCard listProductItem-riskCard--module listProductItem-riskCard--mobile">
+                        <p>El nivel de riesgo de los Planes, en una escala del 1 al 7, varía del 2 al 6.</p>
+                        <div class="numbers">1</div>
+                        <div class="numbers">2</div>
+                        <div class="numbers">3</div>
+                        <div class="numbers">4</div>
+                        <div class="numbers">5</div>
+                        <div class="numbers">6</div>
+                        <div class="numbers">7</div>
+                        <div class="half">
+                            <p>
+                                <img class="arrow rotate" src="assets/img/sprites/arrow-products-dark.svg" alt="">
+                            </p>
+                            <p>Potencialmente  menor rendimiento</p>
+                            <p>Menor riesgo</p>
+                        </div><div class="half">
+                            <p>
+                                <img class="arrow" src="assets/img/sprites/arrow-products-dark.svg" alt="">
+                            </p>
+                            <p>Potencialmente  mayor rendimiento</p>
+                            <p>Mayor riesgo</p>
+                        </div>
+                    </div>
+                    <p>{{ modal_desc }}</p>
+                </div>
+            </div>
+        {% endif %}
+        {% if modal_cta is defined %}
+            <div class="listProductItem-cell listProductItem-cta">
+                <div class="listProductItem-cellWrapper ">
+                    <a class="Button Button--solid bg-secondary" href="{{ modal_link | raw }}"><span>{{ modal_cta }}</span></a>
+                </div>
+            </div>
+        {% endif %}
+        {% if info is defined %}
+        <div class="listProductItem-risk">
+            <div class="listProductItem-riskCard listProductItem-riskCard--module">
+                <p>El nivel de riesgo de los Planes, en una escala del 1 al 7, varía del 2 al 6.</p>
+                <div class="numbers">1</div>
+                <div class="numbers">2</div>
+                <div class="numbers">3</div>
+                <div class="numbers">4</div>
+                <div class="numbers">5</div>
+                <div class="numbers">6</div>
+                <div class="numbers">7</div>
+                <div class="half">
+                    <p>
+                        <img class="arrow rotate" src="assets/img/sprites/arrow-products-dark.svg" alt="">
+                    </p>
+                    <p>Potencialmente  menor rendimiento</p>
+                    <p>Menor riesgo</p>
+                </div><div class="half">
+                    <p>
+                        <img class="arrow" src="assets/img/sprites/arrow-products-dark.svg" alt="">
+                    </p>
+                    <p>Potencialmente  mayor rendimiento</p>
+                    <p>Mayor riesgo</p>
+                </div>
+            </div>
+            <div class="listProductItem-riskInfo">
+                <p>El nivel de riesgo y las alertas de liquidez de cada plan está detallado en el documento de datos fundamentales consultable desde el catálogo.</p>
+                <p><img src="assets/img/sprites/lock.svg" alt=""><img src="assets/img/sprites/lock.svg" alt=""> El cobro de la prestación o el ejercicio del derecho de rescate sólo es posible en caso de acaecimiento de alguna de las contingencias o supuestos excepcionales de liquidez regulados en la normativa de planes y fondos de pensiones.</p>
+                <p><img src="assets/img/sprites/lock.svg" alt=""><img src="assets/img/sprites/lock.svg" alt=""> El valor de los derechos de movilización, de las prestaciones y de los supuestos excepcionales de liquidez depende del valor de mercado de los activos del fondo de pensiones y puede provocar pérdidas relevantes.</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+</div>

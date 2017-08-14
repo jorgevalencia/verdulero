@@ -1,0 +1,140 @@
+.Faq {
+    margin-bottom: space();
+    max-width: get-rems(960px);
+    padding: 0 space();
+
+    @include breakpoint($s960) {
+        margin-bottom: space(3);
+        padding: 0 space(2);
+    }
+
+    .Faq-title {
+        margin-bottom: space(2);
+        text-align: center;
+    }
+
+    .Faq-CTA {
+        text-align: center;
+    }
+
+    .Faq-item {
+        border-top: 1px solid $c-neutroLighter;
+        padding: space() 0;
+
+        &:nth-last-child(2) {
+            border-bottom: 1px solid $c-neutroLighter;
+            margin-bottom: space(1.5);
+        }
+
+        .Faq-item-button {
+            display: flex;
+            justify-content: space-between;
+
+            .Faq-button-title {
+                @include fluid-type(17px, 20px);
+
+                color: $c-neutroDark;
+            }
+
+            .Faq-button-arrow {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                margin-left: space(2);
+                width: space(2);
+
+                &.is-open {
+                    transform: rotate(180deg);
+                }
+
+                img {
+                    height: get-rems(20px);
+                    transform: rotate(90deg);
+                    width: get-rems(20px);
+                }
+            }
+        }
+
+        .Faq-item-content {
+            display: none;
+            padding: space(.5) 0;
+
+            @include breakpoint($s960) {
+                padding: space() space(2) space() space();
+            }
+
+            .Faq-content-rating {
+                background-color: $c-neutroLightest;
+                padding: space(.5);
+
+                @include breakpoint($s480) {
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .Faq-rating-text {
+                    font-size: get-rems(15px);
+                    margin-bottom: 0;
+                }
+
+                .Faq-rating-stars {
+                    display: flex;
+                    margin-left: auto;
+                    margin-top: space(.5);
+
+                    @include breakpoint($s480) {
+                        margin-top: 0;
+                    }
+                }
+
+                .Faq-rating-starItem {
+                    height: get-rems(20px);
+                    position: relative;
+                    width: get-rems(24px);
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    .Faq-star {
+                        height: 100%;
+                        position: absolute;
+                        transition: $global-animation;
+                        width: 100%;
+
+                        &.Faq-star--off {
+                            opacity: 1;
+                        }
+
+                        &.Faq-star--on {
+                            opacity: 0;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                    &.is-active {
+                        .Faq-star {
+                            transform: scale(1.15);
+                        }
+                    }
+
+                    &.is-active, &.is-selected {
+                        .Faq-star {
+                            &.Faq-star--off {
+                                opacity: 0;
+                            }
+
+                            &.Faq-star--on {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

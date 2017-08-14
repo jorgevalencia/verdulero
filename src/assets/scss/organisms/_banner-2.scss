@@ -1,0 +1,36 @@
+.Banner2 {
+    background: $c-neutroLightest;
+    margin-bottom: space(2);
+    padding: space(1) 0 0;
+
+    @include breakpoint($s960) {
+        margin-bottom: space(3);
+        padding: space(2) 0 space(1);
+    }
+
+    .Banner2-container {
+        @include breakpoint($s960) {
+            justify-content: space-between;
+        }
+    }
+
+    .Banner2-image {
+        margin-bottom: space();
+
+        img {
+            width: 100%;
+        }
+
+        @include breakpoint($s960) {
+            width: auto;
+        }
+    }
+
+    .Banner2-content {
+        margin-bottom: space();
+
+        .Banner2-title {
+            color: $c-primary;
+        }
+    }
+}

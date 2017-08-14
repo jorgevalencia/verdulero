@@ -1,0 +1,5 @@
+path:
+    images: '/assets/img/'
+    styles: '/assets/css/'
+    scripts: '/assets/js/'
+    libs: '/assets/node_modules/'

@@ -1,0 +1,68 @@
+.contactBusiness {
+    margin-bottom: space(2);
+
+    .contactBusiness-wrapper {
+        background-color: $c-white;
+        border-bottom: 1px solid $c-neutroLight;
+        padding: 0;
+
+        @include breakpoint($s640) {
+            border: 1px solid $c-neutroLight;
+            border-radius: get-rems(6px);
+            padding: space() space(1.25);
+        }
+
+        @include breakpoint($s960) {
+            padding: space(1.5) space(2);
+        }
+    }
+
+    .contactBusiness-item {
+        margin-bottom: space();
+        padding-right: 0;
+
+        @include breakpoint($s640) {
+            margin-bottom: 0;
+            padding-right: space(.5);
+        }
+
+        @include breakpoint($s960) {
+            padding-right: space();
+        }
+
+        .contactBusiness-title {
+            margin-bottom: 0;
+
+            @include breakpoint($s640) {
+                margin-bottom: space();
+            }
+
+            @include breakpoint($s960) {
+                margin-bottom: 0;
+            }
+        }
+
+        p {
+            margin-bottom: space(.5);
+
+            @include breakpoint($s640) {
+                margin-bottom: space();
+            }
+        }
+
+        .contactBusiness-icon {
+            display: inline-block;
+            margin-right: space(.5);
+
+            img {
+                height: get-rems(25px);
+                width: get-rems(25px);
+            }
+
+            &.email {
+                position: relative;
+                top: get-rems(3px);
+            }
+        }
+    }
+}

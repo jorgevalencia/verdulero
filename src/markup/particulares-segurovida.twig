@@ -1,0 +1,106 @@
+{% set locale = 'es' %}
+
+<!--MENU - Selected items-->
+{% set menu_infcorp = '' %}
+{% set menu_particulares = 'is-selected' %}
+{% set menu_p_seguro = 'is-selected' %}
+{% set menu_p_pensiones = '' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+
+{% set benefits = {
+    1:{
+        title: 'Alta cobertura',
+        content: 'El importe de la prima es muy bajo en relación con la cuota del préstamo y las coberturas de este seguro.'
+    },
+    2:{
+        title: 'Cobertura médica premium',
+        content: 'Servicios adicionales dirigidos a velar por la salud del asegurado y la de su familia.'
+    },
+    3:{
+        title: 'Cuotas cubiertas en caso de desempleo o de incapacidad temporal',
+        content: 'Ante situaciones inesperadas, estarás protegido para poder regularizar la situación económica de tu familia.'
+    },
+    4:{
+        title: 'Contratación rápida y sencilla',
+        content: 'Una vez contratados, tú estarás asegurado y tu familia protegida a partir del siguiente día hábil.'
+    }
+} %}
+{% set products_menu = [ {'name': 'Beneficios', 'id':  'benefits'}, { 'name': 'Productos', 'id': 'products'}, { 'name':'Preguntas frecuentes', 'id': 'faq'}, { 'name':'Artículos relacionados', 'id': 'highlights'} ] %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+{% block html_id %}section-Particulares{% endblock %}
+{% block Main_classes %}Main-Productos{% endblock %}
+
+{% block content %}
+
+<div class="Producto">
+
+{% include 'organisms/billboard-product.twig' with {
+    background: 'billboard-particulares-segurovida.jpg',
+    breadcrumb: ['Particulares','Seguros de vida'],
+    title: 'Seguros de Vida',
+    subtitle: 'La vida de los tuyos más segura',
+    description: '<p>Asegura un capital para tu familia a cambio de una prima mensual. Nuestro Seguro de Vida <b>te asegura a ti y protege a tu familia</b> con unas garantías excelentes y a un precio muy competitivo.</p>
+    <p>En caso de padecer una Incapacidad Permanente Absoluta o faltar tú, gracias al capital que protege a los tuyos - o a ti mismo en caso de Incapacidad Permanente Absoluta - podrás tener la <b>tranquilidad</b> de poder hacer frente a tus gastos cotidianos o incluso <b>liberarte de cargas</b> en caso de haber solicitado algún préstamo.</p>
+    <p>Si eres <b>autónomo</b> tenemos un seguro de vida adaptado a tus necesidades que te permitirá cubrirte a ti mismo y a tus familiares: <a href="#">Protección Autónomo Vida</a>.</p>'
+} %}
+
+{% include 'molecules/anchorsMenu.twig' with {
+    products_menu: [ {'name': 'Beneficios', 'id':  'benefits'}, { 'name': 'Productos', 'id': 'products'}, { 'name':'Preguntas frecuentes', 'id': 'faq'}, { 'name':'Artículos relacionados', 'id': 'highlights'} ],
+    class: "noMargin"
+} %}
+
+{% include 'organisms/benefits.twig' with {
+    title: 'Beneficios',
+} %}
+
+<div id="products" class="productsList u-wrapper">
+    <h2>Productos</h2>
+    {% include 'molecules/listproduct.twig' with {
+        cols: '3',
+        product_title: 'Seguro Vida Familiar',
+        product_desc: 'Con este seguro podrás asegurar un capital para cubrir las situaciones inesperadas y garantizar tu tranquilidad y la de tus familiares.',
+        product_cta: 'Más información',
+        product_product_link: "#"
+    } %}
+    {% include 'molecules/listproduct.twig' with {
+        cols: '3',
+        product_title: 'Seguro Seviam Protect',
+        product_desc: 'Este seguro de vida está vinculado a un préstamo. Con el, podrás proteger y mantener la estabilidad económica de tu familia, en caso de fallecimiento, o protegerte a ti mismo, en caso de invalidez absoluta y permanente.',
+        product_cta: 'Más información',
+        product_link: "#"
+    } %}
+    {% include 'molecules/listproduct.twig' with {
+        cols: '3',
+        product_title: 'Protección Autónomo Vida',
+        product_desc: 'Se trata de un seguro de vida idóneo para autónomos, ya que permite cubrirte a tí mismo y a tus familiares con un capital para el caso de fallecimiento, invalidez absoluta y permanente e incapacidad temporal, tanto por accidente como por enfermedad.',
+        product_cta: 'Más información',
+        product_link: "#",
+        product_label: 'Producto para autónomos'
+    } %}
+</div>
+
+{% include 'organisms/faq.twig' %}
+
+<div class="BlogWrapper">
+    <div class="u-wrapper">
+        {% include 'organisms/blog.twig' with {
+        blogSubtitle: 'Artículos relacionados que te pueden interesar',
+        cta: false,
+        marginBottom: true
+        } %}
+    </div>
+</div>
+
+{% include 'organisms/highlights.twig' with {
+    class: 'u-wrapper'
+} %}
+
+{% include 'organisms/contact-bar.twig' with {
+    background: 'primary',
+    classes: 'no-margin'
+} %}
+
+{% endblock %}

@@ -1,0 +1,92 @@
+.Link {
+    @include fluid-type(15px, 18px);
+
+    color: currentColor;
+    font-weight: 600;
+    transition: $global-animation;
+
+    &.c-primary {
+        color: $c-primary;
+
+        &:hover {
+            color: $c-primaryDark;
+        }
+    }
+
+    &.Link--arrow {
+        align-items: center;
+        display: inline-flex;
+
+        &.margin-bottom {
+            margin-bottom: space();
+        }
+
+        img {
+            margin-left: get-rems(10px);
+            position: relative;
+            top: 1px;
+            width: get-rems(10px);
+        }
+
+        &.is-white {
+            color: $c-white;
+        }
+
+        .Link-icon {
+            @include arrow ();
+        }
+
+        &:hover {
+            .Link-icon {
+                margin-left: space(.75);
+            }
+        }
+    }
+
+    &.Link--list {
+        align-items: center;
+        display: flex;
+        font-weight: 300;
+        justify-content: space-between;
+
+        span {
+            flex: 1;
+        }
+
+        .u-icon {
+            @include arrow ($c-neutroLight, 14px, 16px);
+        }
+
+        &:hover {
+            .u-icon {
+                fill: $c-primaryDark;
+            }
+        }
+
+        &.has-borderBottom {
+            padding: get-rems(8px) 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $c-neutroLight;
+            }
+        }
+    }
+
+    &.Link--icon {
+        align-items: center;
+        display: inline-flex;
+
+        .u-icon {
+            fill: currentColor;
+            height: get-rems(22px);
+            margin-right: space(.4);
+            width: get-rems(18px);
+
+            @include breakpoint($s960) {
+                height: get-rems(24px);
+                margin-right: space(.5);
+                width: get-rems(20px);
+            }
+        }
+    }
+}

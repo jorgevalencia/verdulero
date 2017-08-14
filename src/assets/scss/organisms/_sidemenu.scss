@@ -1,0 +1,182 @@
+.Sidemenu {
+    padding-bottom: space(1.25);
+
+    @include breakpoint($s960) {
+        padding-bottom: space(3);
+        padding-top: space(3);
+    }
+
+    .Sidemenu-main {
+        background: transparent;
+        border-bottom: solid 1px $c-neutroLight;
+        position: relative;
+
+        .Sidemenu-mainButton {
+            background-color: $c-secondary;
+            cursor: pointer;
+            display: block;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: get-rems(62px);
+
+            .Sidemenu-mainIcon {
+                height: get-rems(58px);
+                left: 0;
+                max-width: none;
+                position: absolute;
+                transition: $global-animation;
+                width: get-rems(120px);
+            }
+
+            &:hover {
+                background-color: $c-secondaryDark;
+            }
+
+            @include breakpoint($s960) {
+                display: none;
+            }
+        }
+
+        &.open {
+            .Sidemenu-mainButton {
+                .Sidemenu-mainIcon {
+                    left: get-rems(-63px);
+                }
+            }
+        }
+
+        @include breakpoint($s960) {
+            background: linear-gradient(to right, $c-primaryDark 0%, $c-primary 100%);
+            border-bottom: none;
+        }
+
+        a {
+            color: $c-primary;
+            display: block;
+            font-size: get-rems(16px);
+            line-height: get-rems(28px);
+            padding: space(.5) space(2) space(.5) space(.5);
+
+            @include breakpoint($s960) {
+                color: $c-white;
+                font-size: get-rems(18px);
+                font-weight: bold;
+                padding: space(.5) space(2) space(.5) space();
+            }
+        }
+    }
+
+    .Sidemenu-container {
+        border-bottom: solid 1px $c-neutroLight;
+        display: none;
+
+        @include breakpoint($s960) {
+            display: block;
+        }
+
+        .Sidemenu-item {
+            border-bottom: solid 1px $c-neutroLight;
+            list-style: none;
+            position: relative;
+            transition: $global-animation;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: $c-neutroLighter;
+            }
+
+            span {
+                position: absolute;
+                right: space(.75);
+                top: 40%;
+                transition: $global-animation;
+
+                img {
+                    height: get-rems(18px);
+                    width: get-rems(12px);
+                }
+            }
+
+            a {
+                color: $c-neutroDark;
+                display: inline-block;
+                font-size: get-rems(16px);
+                padding: space(.5) space(2) space(.5) space(.5);
+
+                @include breakpoint($s960) {
+                    font-size: get-rems(18px);
+                    padding: space(.5) space(2) space(.5) space();
+                }
+            }
+
+            .Sidemenu-submenu {
+                border-top: solid 1px $c-neutroLight;
+                display: none;
+
+                .Sidemenu-item {
+                    // background-color: $c-neutroLightest;
+                    list-style: none;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    a {
+                        padding: space(.5) space(2) space(.5) space(1.5);
+
+                        @include breakpoint($s960) {
+                            padding: space(.5) space(2) space(.5) space(2.5);
+                        }
+                    }
+                }
+            }
+
+            &.dropdown {
+                span {
+                    top: get-rems(22px);
+                    transform: rotate(90deg);
+                }
+
+                &.open {
+                    background-color: $c-neutroLightest;
+
+                    .Sidemenu-item {
+                        &:hover {
+                            background-color: $c-neutroLighter;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: $c-neutroLightest;
+                    }
+
+                    span {
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+
+            &.active {
+                &::before {
+                    background-color: $c-secondary;
+                    content: '';
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: get-rems(3px);
+
+                    @include breakpoint($s960) {
+                        width: get-rems(5px);
+                    }
+                }
+            }
+        }
+    }
+}

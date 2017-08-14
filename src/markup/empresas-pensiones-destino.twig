@@ -1,0 +1,102 @@
+{% set locale = 'es' %}
+
+<!--MENU - Selected items-->
+{% set menu_infcorp = '' %}
+{% set menu_particulares = 'is-selected' %}
+{% set menu_p_seguro = '' %}
+{% set menu_p_pensiones = '' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+
+{% set benefits = {
+    1:{
+        title: 'Inversión optimizada',
+        content: 'Los planes Destino adaptan la distribución de los activos a medida que nos acercamos a la fecha destino.'
+    },
+    2:{
+        title: 'Sin esfuerzo en la gestión',
+        content: 'Hacemos fácil lo difícil. Así, no tendrá que preocuparte por la gestión de tu plan de pensiones.'
+    },
+    3:{
+        title: 'Adaptados a tus necesidades',
+        content: 'En función de tu fecha estimada de jubilación, podrás elegir el plan que mejor se adapte a tu objetivo.'
+    },
+} %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+{% block html_id %}section-Particulares{% endblock %}
+{% block Main_classes %}Main-Productos{% endblock %}
+
+{% block content %}
+
+<div class="Producto">
+
+{% include 'organisms/billboard-product.twig' with {
+    background: 'billboard-empresas-planes-pensiones-destino.jpg',
+    breadcrumb: ['Particulares','Planes de pensiones','Destino'],
+    title: 'Planes de pensiones: Destino',
+    subtitle: 'Ahorro para la jubilación con interesantes ventajas fiscales',
+    description: 'Destino es una gama de planes de pensiones que responden a la filosofía de planes con fecha objetivo. Se trata de planes no garantizados orientados a la gestión óptima del ahorro teniendo en cuenta el horizonte temporal de jubilación. La Gama Destino la forman inicialmente 4 planes de pensiones, con diferentes fechas objetivo. Selecciona el más cercano a tu horizonte de jubilación.'
+} %}
+
+{% include 'molecules/anchorsMenu.twig' with {
+    products_menu: [ {'name': 'Beneficios', 'id':  'benefits'}, { 'name': 'Productos', 'id': 'products'}, { 'name':'Preguntas frecuentes', 'id': 'faq'}, { 'name':'Artículos relacionados', 'id': 'highlights'} ]
+} %}
+
+{% include 'organisms/benefits.twig' with {
+    title: 'Beneficios',
+} %}
+
+<div id="products" class="productsList u-wrapper">
+    <h2>Productos</h2>
+    {% include 'molecules/listproduct.twig' with {
+        cols: '3',
+        product_title: 'CABK Destino 2022',
+        product_desc: 'Plan de pensiones orientado a perfiles de inversión conservadores que quieran invertir en activos de renta fija a corto plazo y tengan próxima la jubilación.',
+        product_cta: 'Más información',
+        link: "#"
+    } %}
+    {% include 'molecules/listproduct.twig' with {
+        cols: '3',
+        product_title: 'CABK Destino 2030',
+        product_desc: 'Plan de pensiones que combina una parte en Renta Variable con otra en Renta Fija. A medida que el momento de tu jubilación se vaya acercando, irá haciendo su política de inversión más conservadora.',
+        product_cta: 'Más información',
+        link: "#"
+    } %}
+    {% include 'molecules/listproduct.twig' with {
+        cols: '3',
+        product_title: 'CABK Destino 2040',
+        product_desc: 'Plan de pensiones que aprovecha al máximo el alto potencial de crecimiento de la bolsa a largo plazo teniendo en cuenta que el horizonte de tu jubilación es lejano.',
+        product_cta: 'Más información',
+        link: "#"
+    } %}
+    {% include 'molecules/listproduct.twig' with {
+        cols: '3',
+        product_title: 'CABK Destino 2050',
+        product_desc: 'Plan de pensiones que te ayudará a acumular rentabilidad antes y durante más tiempo. Con el tiempo irá adaptando automáticamente su política de inversión.',
+        product_cta: 'Más información',
+        link: "#"
+    } %}
+</div>
+
+{% include 'organisms/faq.twig' %}
+
+{% include 'organisms/banner.twig' %}
+
+{% include 'organisms/blog.twig' with {
+    blogSubtitle: 'Artículos relacionados que te pueden interesar',
+    cta: false,
+    marginBottom: true
+} %}
+
+{% include 'organisms/highlights.twig' with {
+    class: 'u-wrapper'
+} %}
+
+{% include 'organisms/contact-bar.twig' with {
+    background: 'primary',
+    classes: 'no-margin'
+} %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+path:
+    images: '/assets/img/'
+    styles: '/assets/css/'
+    scripts: '/assets/js/'
+    libs: '/assets/node_modules/'
+
+landing:
+    data:
+        test: 'test'
+
+metas:
+    title: 'VidaCaixa'
+    description: 'VidaCaixa'
+    application_name: 'VidaCaixa'
+    og_type: 'VidaCaixa'
+    og_title: 'VidaCaixa'
+    og_description: 'VidaCaixa'
+    og_image: 'VidaCaixa'
+    og_url: 'VidaCaixa'
+    og_site: 'VidaCaixa'
+    twitter_card: 'VidaCaixa'
+    twitter_title: 'VidaCaixa'
+    twitter_description: 'VidaCaixa'
+    twitter_image: 'VidaCaixa'
+    twitter_url: 'VidaCaixa'
+    twitter_site: 'VidaCaixa'

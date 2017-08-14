@@ -1,0 +1,362 @@
+{% set locale = 'es' %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="Styleguide u-wrapper">
+
+    <br>
+    <br>
+
+    {% include 'organisms/form-login.twig' %}
+
+    <br>
+    <br>
+
+    <div class="">
+        {% include 'molecules/breadcrumb.twig' with {
+        breadcrumb: ['Inicio','Sala de prensa'],
+        class: 'is-dark'
+        } %}
+        <div class="u-flex">
+            <div class="u-flex--s0-12 u-flex--s960-6">
+                <div class="Search">
+                    <input class="Search-bar vc-input" type="text" placeholder="Buscar...">
+                    <a href="#" class="Search-button"><img src="assets/img/sprites/search.svg"></img></a>
+                </div>
+            </div>
+            <div class="u-flex--s0-12 u-flex--s960-6">
+                <select name="select" class="Select">
+                    <option value="Financiera" selected="" class="BlogFilter-selectItem">Financiera</option>
+                    <option value="Inversiones" class="BlogFilter-selectItem">Inversiones</option>
+                    <option value="Seguro médico" class="BlogFilter-selectItem">Seguro médico</option>
+                    <option value="VidaCaixa Barcelona" class="BlogFilter-selectItem">VidaCaixa Barcelona</option>
+                    <option value="VidaCaixa España" class="BlogFilter-selectItem">VidaCaixa España</option>
+                    <option value="Seguros de vida" class="BlogFilter-selectItem">Seguros de vida</option>
+                </select>
+            </div>
+        </div>
+        <p>Se han encontrado <b>20 resultados</b> para <b>Plan de pensiones</b> en <b>Sala de Prensa</b></p>
+    </div>
+
+    <br>
+    <br>
+
+    {% include 'organisms/slider.twig' %}
+
+    <br>
+    <br>
+    {% include 'organisms/notes.twig' %}
+
+    {% include 'organisms/egestion.twig' %}
+
+    {% include 'organisms/social-networks.twig' %}
+
+    <section class="Styleguide-typography">
+        <h3 class="Styleguide-title">Typography</h3>
+        <h1>H1 - Page Title</h1>
+        <h2>H2 - Main block title</h2>
+        <h3>H3 - Small block title</h3>
+        <h4>H4 - Item title</h4>
+
+        <p>Cliche raclette waistcoat, hammock chartreuse hella seitan try-hard edison bulb pour-over glossier. Bespoke neutra stumptown hoodie everyday carry. Photo booth celiac selvage, scenester organic franzen bicycle rights semiotics typewriter plaid marfa blue bottle viral godard tilde. Cliche DIY everyday carry keffiyeh.</p>
+
+        <p class="highlight">Cliche raclette waistcoat, hammock.</p>
+
+        <p class="breadcrumb">Cliche raclette waistcoat, hammock.</p>
+
+        <p class="copyright">Cliche raclette waistcoat, hammock.</p>
+
+        <p class="small-subtitle">Cliche raclette waistcoat, hammock.</p>
+
+        <p class="tiny-text">Cliche raclette waistcoat, hammock.</p>
+    </section>
+
+    <section class="Styleguide-buttons">
+        <h3 class="Styleguide-title">Buttons</h3>
+        <a class="Button Button--solid Button--icon bg-primary" href="#"><span>button</span><img src="assets/img/sprites/button-icon.svg"></img></a>
+        <br>
+        <br>
+        <a class="Button Button--solid bg-secondary" href="#"><span>button</span></a>
+        <br>
+        <br>
+        <a class="Button Button--hollow c-primary" href="#"><span>button</span></a>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section class="Styleguide-links">
+        <h3 class="Styleguide-title">Links</h3>
+        <a class="Link Link--arrow c-primary" href="#"><span>Arrow link</span><img src="assets/img/sprites/arrow.svg"></img></a>
+        <br>
+        <br>
+        <a class="Link Link--list c-primary" href="#"><span>List link</span><img src="assets/img/sprites/arrow.svg"></img></a>
+        <br>
+        <br>
+        <a class="Link Link--list c-primaryDark has-borderBottom" href="#"><span>Menu list</span><img src="assets/img/sprites/arrow.svg"></img></a>
+        <br>
+        <br>
+        <a class="Link Link--icon c-primary" href="#"><img src="assets/img/sprites/location.svg"></img><span>Icon link</span></a>
+        <br>
+        <a class="Link Link--arrow is-white Styleguide-bgDark" href="#"><span>link on dark background</span><img src="assets/img/sprites/arrow.svg"></img></a>
+    </section>
+    <br>
+    <br>
+    <section class="Styleguide-form">
+        <h3 class="Styleguide-title">Form Elements</h3>
+        <form class="Form" action="#" method="post">
+            <label for="">DNI *</label>
+            <input class="vc-input" placeholder="DNI" type="text" name="" value="">
+            <label for="">Correo electrónico *</label>
+            <input class="success vc-input" placeholder="DNI" type="text" name="" value="" class="vc-input">
+            <label for="">DNI *</label>
+            <input class="error vc-input" placeholder="DNI" type="text" name="" value="">
+            <label for="">DNI *</label>
+            <div class="Form-error">
+                <input class="error vc-input" placeholder="DNI" type="text" name="" value="">
+                <div class="Form-errorMessage">Este campo es obligatorio.</div>
+            </div>
+
+            <textarea rows="4" cols="50">Text for text-area.</textarea>
+            <div class="Form-error">
+                <textarea class="error" rows="4" cols="50">Text for text-area.</textarea>
+                <div class="Form-errorMessage">Este campo es obligatorio.</div>
+            </div>
+
+            <div class="custom-select">
+                <select class="" name="">
+                    <option value="value1" selected>Value 1</option>
+                    <option value="value2">Value 2</option>
+                    <option value="value3">Value 3</option>
+                </select>
+            </div>
+
+            <div class="Form-error">
+                <div class="custom-select error">
+                    <select class="" name="">
+                        <option value="value1">Value 1</option>
+                        <option value="value2" selected>Value 2</option>
+                        <option value="value3">Value 3</option>
+                    </select>
+                </div>
+                <div class="Form-errorMessage">Este campo es obligatorio.</div>
+            </div>
+
+            <div class="custom-checkbox">
+                <input type="checkbox" id="test1" />
+                <label class="custom-checkboxLabel" for="test1">He leido y acepto la <a href="#">política de privacidad</a> y las <a href="#">condiciones de uso.</a></label>
+            </div>
+
+            <div class="SearchBar">
+                <input class="SearchBar-input" placeholder="Plan de pensiones" type="search" name="" value="">
+                <a href="#"><img src="assets/img/sprites/search.svg"></img></a>
+            </div>
+        </form>
+
+    </section>
+
+    <br>
+    <section class="Styleguide-feedback">
+        <h3 class="Styleguide-title">Messages</h3>
+        <p>Mensaje</p>
+        <div class="Message">
+            <span class="Message-content small">Quisque magna sapien, blandit non libero sit amet, cursus dignissim ipsum at neque ut elit condimentum vestibulum.</span>
+        </div>
+        <br>
+        <p>Mensaje de éxito</p>
+        <div class="Message Message--success">
+            <i class="Message-icon"><img src="assets/img/sprites/success.svg"></img></i>
+            <span class="Message-content small">Tu mensaje se ha enviado. Nuestros asesores te contestarán tan pronto como sea posible.</span>
+        </div>
+        <br>
+        <p>Mensaje de alerta</p>
+        <div class="Message Message--alert">
+            <i class="Message-icon"><img src="assets/img/sprites/alert.svg"></img></i>
+            <span class="Message-content small">Etiam venenatis quam turpis, at porta neque ornare vitae. Nulla libero massa, bibendum in felis sit amet, tincidunt facilisis nisl.</span>
+        </div>
+        <br>
+        <p>Mensaje de error</p>
+        <div class="Message Message--error ">
+            <i class="Message-icon"><img src="assets/img/sprites/error.svg"></img></i>
+            <span class="Message-content small">Maecenas tincidunt aliquet lorem, nec tempor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        </div>
+        <br>
+        <p>Mensaje pop-up</p>
+        <div class="Message u-floatingBox ">
+            <span class="Message-content small">Maecenas tincidunt aliquet lorem, nec tempor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        </div>
+        <br>
+        <p>Mensaje buscador</p>
+        <div class="Message Message--search u-floatingBox">
+            <span class="Message-content small">Maecenas tincidunt aliquet lorem, nec tempor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        </div>
+        <br>
+        <p>Mensaje tooltip</p>
+        <div class="Message Message--tooltip u-floatingBox">
+            <span class="Message-content small">Maecenas tincidunt aliquet lorem, nec tempor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section class="Styleguide-icons">
+        <h3 class="Styleguide-title">Other Icons</h3>
+        <img src="assets/img/sprites/dots.svg"></img>
+        <img src="assets/img/sprites/hamburger.svg"></img>
+        <img src="assets/img/sprites/phone.svg"></img>
+        <img src="assets/img/sprites/mail.svg"></img>
+        <img src="assets/img/sprites/language.svg"></img>
+        <img src="assets/img/sprites/facebook.svg"></img>
+        <img src="assets/img/sprites/twitter.svg"></img>
+        <img src="assets/img/sprites/google.svg"></img>
+        <img src="assets/img/sprites/instagram.svg"></img>
+        <img src="assets/img/sprites/linkedin.svg"></img>
+    </section>
+    <br>
+    <br>
+
+</div>
+<h3 class="Styleguide-title">Billboard</h3>
+{% include 'organisms/featured.twig' %}
+
+<h3 class="Styleguide-title">Destacados</h3>
+{% include 'organisms/highlights.twig' %}
+<br>
+<br>
+
+<h3 class="Styleguide-title">Banner #1</h3>
+{% include 'organisms/banner.twig' %}
+
+<br>
+<br>
+<br>
+<br>
+
+<h3 class="Styleguide-title">Barra Contacto</h3>
+{% include 'organisms/contact-bar.twig' with {
+    background: 'white'
+} %}
+<br>
+<br>
+{% include 'organisms/contact-bar.twig' with {
+    background: 'primary'
+} %}
+
+<br>
+<br>
+<br>
+{% include 'organisms/newsletter.twig' with {
+    type: 'is-oneThird',
+    title: 'Newsletter',
+    description: 'Suscríbete a nuestra newsletter y entérate de las últimas noticias de la compañia.',
+    placeholder: 'Introduce tu email',
+    link: '#'
+} %}
+<br>
+<br>
+<br>
+{% include 'organisms/newsletter.twig' with {
+    type: 'is-halfHalf',
+    title: 'Suscríbete a nuestra newsletter',
+    description: 'Aprenderás a disfrutar de tu futuro sin preocupaciones.',
+    placeholder: 'Introduce tu email',
+    link: '#'
+} %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3 class="Styleguide-title">Bootstrap Example - Tabs</h3>
+<div class="Styleguide-bootstrapExample">
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+            <li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+                <p>I'm in Section 1.</p>
+            </div>
+            <div class="tab-pane" id="tab2">
+                <p>Howdy, I'm in Section 2.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+{% include 'organisms/billboard-simple.twig' with {
+    background: 'banner1-img.jpg',
+    subtitle: 'Empresas',
+    title: 'Soluciones a medida para empresas y colectivos'
+} %}
+
+{% include 'organisms/search.twig' with {
+    background: 'banner1-img.jpg',
+} %}
+
+{% include 'organisms/blog.twig' with {
+    blogSubtitle: 'Artículos relacionados que te pueden interesar',
+} %}
+
+{% include 'organisms/blog-with-filter.twig' with {
+    blogSubtitle: 'Temas que te pueden interesar',
+} %}
+
+<div class="listProduct">
+    {% include 'molecules/listproduct.twig' with {
+        cols: '3',
+        product_title: 'Seguro Vida Familiar',
+        product_desc: 'Con este seguro podrás <b>asegurar un capital</b> para cubrir las situaciones inesperadas y garantizar tu <b>tranquilidad</b> y la de tus familiares.',
+        product_cta: 'Más información'
+    } %}
+
+    {% include 'molecules/listproduct.twig' with {
+        cols: '3',
+        product_title: 'Seguro Vida Familiar 2',
+        product_desc: 'Con este seguro podrás <b>asegurar un capital</b> para cubrir las situaciones inesperadas y garantizar tu <b>tranquilidad</b> y la de tus familiares.',
+        product_cta: 'Más información'
+    } %}
+
+    {% include 'molecules/listproduct.twig' with {
+        cols: '4',
+        QA_title: 'Planes de Pensiones',
+        QA_titleInfo: 'Generar un ahorro destinado para el momento de la jubilación, con el cual podrá complementar la pensión de la Seguridad Social.',
+        QA_descTitle1: 'Disponibilidad',
+        QA_descInfo1: 'En la fecha de jubilación, aunque puede anticiparse por otras situaciones concretas.',
+        QA_descTitle2: 'Otros beneficios',
+        QA_descInfo2: 'Importantes ventajas en la declaración de la renta.',
+        QA_cta: 'Ver modalidades'
+    } %}
+
+    {% include 'molecules/listproduct.twig' with {
+        cols: '5',
+        modal_title: 'Destino',
+        modal_edad: 'Todas',
+        modal_riesgo: '4',
+        modal_desc: 'Es una gama de planes orientados a la gestión óptima del ahorro teniendo en cuenta el horizonte temporal de jubilación.',
+        modal_cta: 'Ver productos'
+    } %}
+
+    {% include 'molecules/listproduct.twig' with {
+        cols: '5',
+        modal_title: 'Destino',
+        modal_edad: 'Todas',
+        modal_riesgo: '4',
+        modal_desc: 'Es una gama de planes orientados a la gestión óptima del ahorro teniendo en cuenta el horizonte temporal de jubilación.',
+        modal_cta: 'Ver productos'
+    } %}
+
+    {% include 'molecules/listproduct.twig' with {
+        cols: '2',
+        info: true
+    } %}
+
+</div>
+
+
+{% endblock %}

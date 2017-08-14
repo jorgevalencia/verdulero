@@ -1,0 +1,17 @@
+<section class="BillboardProduct module">
+    <div class="BillboardProduct-image">
+        <img src="/assets/img/cms/{{ background }}" alt="">
+    </div>
+
+    <div class="BillboardProduct-header u-wrapper is-small">
+        {% include '../molecules/breadcrumb.twig' with {
+            breadcrumb: ['Particulares','Planes de pensiones','Destino'],
+        } %}
+        <h1>{{ title }}</h1>
+	</div>
+
+	<div class="BillboardProduct-info u-wrapper is-small">
+        <h3>{{ subtitle }}</h3>
+        <p>{{ description }}</p>
+	</div>
+</section>

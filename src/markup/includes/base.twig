@@ -1,0 +1,73 @@
+{% set path_images = path.images %}
+{% set path_styles = path.styles %}
+{% set path_scripts = path.scripts %}
+{% set path_libs = path.libs %}
+
+<!doctype html>
+<html data-html="{% block html_id %}{% endblock %}" class="aui VC-body">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+        {% block metas %}
+            {% include '../organisms/metas.twig' %}
+        {% endblock %}
+
+        {% block alternate_links %}
+            {% include '../molecules/alternate_links.twig' %}
+        {% endblock %}
+
+        {% include '../molecules/favicon.twig' %}
+
+    </head>
+
+    <body class="{% block body_classes %}{% endblock %}">
+
+        {# {% include '../organisms/cookies.twig' %} #}
+
+        {% block header %}
+            {% include '../organisms/header.twig' %}
+            {% include '../organisms/header-mobile.twig' %}
+        {% endblock %}
+
+        <main class="Main js-main {% block Main_classes %}{% endblock %}">
+            {% block content %}{% endblock %}
+        </main>
+
+        {% block footer %}
+            {% include '../organisms/footer.twig' %}
+        {% endblock %}
+
+        <link rel="stylesheet" href="{{ path_styles }}liferay2/themes/classic/css/aui.css" />
+        <link rel="stylesheet" href="{{ path_styles }}liferay2/css/main.css" />
+        <link rel="stylesheet" href="{{ path_styles }}liferay2/themes/classic/css/main.css" />
+
+        <link rel="stylesheet" href="{{ path_libs }}normalize.css/normalize.css" />
+        <link rel="stylesheet" href="{{ path_styles }}styles.css" />
+
+        <link rel="stylesheet" href="{{ path_styles }}liferay2/widget-base.css" />
+        <link rel="stylesheet" href="{{ path_styles }}liferay2/resize-base.css" />
+        <link rel="stylesheet" href="{{ path_styles }}liferay2/aui-sortable-layout.css" />
+
+
+        {% block styles %}{% endblock %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+        <script src="{{ path_libs }}svg4everybody/lib/svg4everybody.js" async defer></script>
+
+        <script src="{{ path_libs }}fastclick/lib/fastclick.js" async defer></script>
+
+        <script src="{{ path_libs }}js-cookie/src/js.cookie.js" async defer></script>
+
+        <script src="{{ path_scripts }}app.js" async defer></script>
+
+        {% block scripts %}{% endblock %}
+
+        {% include '../development.twig' %}
+    </body>
+</html>

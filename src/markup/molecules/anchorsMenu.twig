@@ -1,0 +1,9 @@
+<div class="Anchors-menu {{class}}">
+    <div class="Anchors-menuContainer u-wrapper is-small">
+        <ul>
+            {% for item in products_menu %}
+            <li><a class="js-anchor" href="#{{ item.id }}">{{ item.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

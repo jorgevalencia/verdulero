@@ -1,0 +1,16 @@
+<section id="benefits" class="Benefits module">
+    <div class="u-wrapper is-small">
+        <h2 class="t-h2 Benefits-title">{{ title }}</h2>
+        <div class="Benefits-container">
+            {% for item in benefits %}
+                <div class="Benefits-item">
+                    <div class="Benefits-icon"><img src="assets/img/sprites/checked.svg" alt=""></div>
+                    <div class="Benefits-content">
+                        <h4 class="t-h4 Benefits-itemTitle">{{ item.title }}</h4>
+                        <p>{{ item.content }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

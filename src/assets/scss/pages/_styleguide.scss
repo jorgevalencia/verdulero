@@ -1,0 +1,21 @@
+.Styleguide {
+    .Styleguide-icons {
+        .u-icon {
+            fill: $c-primary;
+            height: get-rems(38px);
+            width: get-rems(38px);
+        }
+    }
+
+    .Styleguide-bgDark {
+        background: $c-black;
+        display: flex;
+        padding: space(.5);
+    }
+}
+
+.Styleguide-title {
+    border-bottom: 1px solid $c-neutro;
+    color: $c-neutro;
+    padding-bottom: space(.5);
+}

@@ -1,0 +1,80 @@
+{% set locale = 'es' %}
+
+<!--MENU - Selected items-->
+{% set menu_infcorp = '' %}
+{% set menu_particulares = '' %}
+{% set menu_p_seguro = '' %}
+{% set menu_p_pensiones = '' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="u-wrapper is-collapse u-flex--wrap">
+    {% include 'organisms/sidemenu.twig' %}
+    <div class="u-flex--s0-12 u-flex--s960-1">
+    </div>
+    <div class="has-sidebar u-wrapper u-flex--s0-12 u-flex--s960-6 u-flex--s1440-7">
+        {% include 'organisms/billboard-text.twig' with {
+            title: 'Resultados anuales y trimestrales'
+        } %}
+        <div class="u-marginBlocks">
+            <h4 class="t-h4">Últimos resultados presentados</h4>
+            {% include 'molecules/listLinks.twig' with {
+                class_subtitle: 'small-subtitle',
+                link_subtitle: '2014 Mayo 13',
+                link_title: 'Resultados anuales 2016 VidaCaixa Grupo',
+                icon_name: 'link'
+            } %}
+        </div>
+        <div class="u-marginBlocks">
+            <h4 class="t-h4">Resultados Anuales</h4>
+            {% include 'molecules/listLinks.twig' with {
+                class_subtitle: 'small-subtitle',
+                link_subtitle: '2014 Mayo 13',
+                link_title: 'Resultados anuales 2016 VidaCaixa Grupo',
+                icon_name: 'link'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+                class_subtitle: 'small-subtitle',
+                link_subtitle: '2015 Junio 26',
+                link_title: 'Resultados anuales 2015 VidaCaixa Grupo',
+                icon_name: 'link'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+                class_subtitle: 'small-subtitle',
+                link_subtitle: '2015 Abril 26',
+                link_title: 'Resultados anuales 2014 VidaCaixa Grupo',
+                icon_name: 'download'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+                class_subtitle: 'small-subtitle',
+                link_subtitle: '2014 Mayo 13',
+                link_title: 'Resultados anuales 2013 VidaCaixa Grupo',
+                icon_name: 'link'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+                class_subtitle: 'small-subtitle',
+                link_subtitle: '2015 Junio 26',
+                link_title: 'Resultados anuales 2012 VidaCaixa Grupo',
+                icon_name: 'link'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+                class_subtitle: 'small-subtitle',
+                link_subtitle: '2015 Abril 26',
+                link_title: 'Resultados anuales 2011 VidaCaixa Grupo',
+                icon_name: 'download'
+            } %}
+        </div>
+    </div>
+</div>
+
+{% include 'organisms/contact-bar.twig' with {
+    background: 'primary',
+    classes: 'no-margin'
+} %}
+
+{% endblock %}

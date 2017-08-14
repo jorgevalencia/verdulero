@@ -1,0 +1,164 @@
+{% set locale = 'es' %}
+
+<!--MENU - Selected items-->
+{% set menu_infcorp = '' %}
+{% set menu_particulares = '' %}
+{% set menu_p_seguro = '' %}
+{% set menu_p_pensiones = '' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+{% set menu_press = '' %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="Resultados NotesFiltered">
+    <div class="Resultados-filter">
+        <div class="Resultados-filterWrapper u-wrapper is-reading">
+            {% include 'organisms/filter.twig' with {
+                breadcrumbVisible: true,
+                text: 'Se han encontrado <b>20 resultados</b> para <b>Plan de pensiones</b> en <b>Sala de Prensa</b>'
+            } %}
+        </div>
+    </div>
+    <div class="u-wrapper is-reading">
+        <div class="NotesFiltered-block">
+            <div class="NotesFiltered-header">
+                <h3>Productos</h3>
+                <a class="Link Link--arrow margin-bottom c-primary" href="#"><span>Más resultados</span><img src="assets/img/sprites/arrow-blue.svg"></img></a>
+            </div>
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Empresas',
+            link_title: 'Planes de pensiones para empresas'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-2',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Particulares',
+            link_title: 'Planes de pensiones para particulares'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Particulares',
+            link_title: 'Rentas vitalicias'
+            } %}
+        </div>
+        <div class="NotesFiltered-block">
+            <div class="NotesFiltered-header">
+                <h3>Pregunta solución</h3>
+                <a class="Link Link--arrow margin-bottom c-primary" href="#"><span>Más resultados</span><img src="assets/img/sprites/arrow-blue.svg"></img></a>
+            </div>
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Particulares',
+            link_title: '¿Estoy a tiempo de tener una buena jubilación?'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-2',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Particulares',
+            link_title: '¿Cuántos años debo ahorrar para poder jubilarme?'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Particulares',
+            link_title: '¿Estoy a tiempo de tener una buena jubilación?'
+            } %}
+        </div>
+        <div class="NotesFiltered-block">
+            <div class="NotesFiltered-header">
+                <h3>Blog VidaCaixa</h3>
+                <a class="Link Link--arrow margin-bottom c-primary" href="#"><span>Más resultados</span><img src="assets/img/sprites/arrow-blue.svg"></img></a>
+            </div>
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Blog vidacaixa',
+            link_title: 'VidaCaixa obtuvo un beneficio neto consolidado de 241,4 millones de euros, un 16,2% más'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-2',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Blog vidacaixa',
+            link_title: 'VidaCaixa recertificada como empresa familiarmente responsable'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Blog vidacaixa',
+            link_title: 'VidaCaixa recibe el premio al mejor fondo de pensiones de renta variable de Europa lorem ipsum'
+            } %}
+        </div>
+        <div class="NotesFiltered-block">
+            <div class="NotesFiltered-header">
+                <h3>Sala de prensa</h3>
+                <a class="Link Link--arrow margin-bottom c-primary" href="#"><span>Más resultados</span><img src="assets/img/sprites/arrow-blue.svg"></img></a>
+            </div>
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Notas de prensa',
+            link_title: 'VidaCaixa obtuvo un beneficio neto consolidado de 241,4 millones de euros, un 16,2% más'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img-2',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Notas de prensa',
+            link_title: 'VidaCaixa recertificada como empresa familiarmente responsable'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_hasPhoto: 'has-photo',
+            photo_name: 'list-img',
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Notas de prensa',
+            link_title: 'VidaCaixa recibe el premio al mejor fondo de pensiones de renta variable de Europa lorem ipsum'
+            } %}
+        </div>
+        <div class="NotesFiltered-block">
+            <div class="NotesFiltered-header">
+                <h3>Otros resultados</h3>
+                <a class="Link Link--arrow margin-bottom c-primary" href="#"><span>Más resultados</span><img src="assets/img/sprites/arrow-blue.svg"></img></a>
+            </div>
+            {% include 'molecules/listLinks.twig' with {
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Información corporativa',
+            link_title: 'Responsabilidad social corporativa'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Servicio al cliente',
+            link_title: 'Guía del contrato del seguro'
+            } %}
+            {% include 'molecules/listLinks.twig' with {
+            class_subtitle: 'small-subtitle',
+            link_subtitle: 'Aviso Legal',
+            link_title: 'Compromiso con la gestión responsable'
+            } %}
+        </div>
+
+    </div>
+    {% include 'organisms/contact-bar.twig' with {
+    background: 'primary',
+    classes: 'no-margin'
+    } %}
+</div>
+
+{% endblock %}

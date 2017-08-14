@@ -1,0 +1,41 @@
+.Anchors-menu {
+    border-bottom: solid 1px $c-neutroLight;
+    border-top: solid 1px $c-neutroLight;
+    margin-bottom: space();
+
+    &.noMargin {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint($s768) {
+        margin-bottom: space(2);
+    }
+
+    ul {
+        justify-content: space-around;
+        padding-top: space();
+
+        @include breakpoint($s768) {
+            display: flex;
+            padding-top: 0;
+        }
+
+        li {
+            padding: 0 0 space() 0;
+
+            @include breakpoint($s768) {
+                padding: space() 0;
+                text-align: center;
+            }
+
+            a {
+                font-size: get-rems(18px);
+                font-weight: 600;
+
+                &:focus {
+                    color: $c-primary;
+                }
+            }
+        }
+    }
+}

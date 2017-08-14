@@ -1,0 +1,7 @@
+master:
+    host: 178.62.124.80
+    user: master_abumryfkwa
+    deploy_path: /home/master/applications/wkkryjchgg/public_html
+    forward_agent: true
+    stage: master
+    branch: master

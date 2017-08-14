@@ -1,0 +1,18 @@
+<section class="BillboardSimple BillboardText {% if marginBottom is defined %}{{marginBottom}}{% endif %} module">
+        <div class="BillboardSimple-wrapper u-flex--wrap">
+        <div class="">
+            <div class="BillboardSimple-bradcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+                <span class="BillboardSimple-bradcrumbItem" property="itemListElement" typeof="ListItem">
+                    <a property="item" typeof="WebPage" class="Link Link--arrow" href="#"><span>Inicio</span><img src="assets/img/sprites/arrow-blue.svg"></a>
+                </span>
+                <span class="BillboardSimple-bradcrumbItem" property="itemListElement" typeof="ListItem">
+                    <a property="item" typeof="WebPage" class="Link Link--arrow" href="#"><span>{{ title }}</span></a>
+                </span>
+            </div>
+            <h2 class="t-h1 BillboardSimple-title">{{ title }}</h2>
+            {% if subtitle is defined %}
+                <p class="">{{ subtitle }}</p>
+            {% endif %}
+        </div>
+	</div>
+</section>

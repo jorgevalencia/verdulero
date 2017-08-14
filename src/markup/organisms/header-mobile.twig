@@ -1,0 +1,95 @@
+<header class="Header-mobile js-Header module">
+    <div class="Header-logo">
+        <a class="vidacaixa-logo" href="/"><img src="assets/img/sprites/vidaCaixa-logo.svg"></img></a>
+    </div>
+    <div class="Header-search-btn-mobile js-searchBtn">
+        <span class="search-open js-btnMobile-open"><img src="assets/img/sprites/search.svg"></img></span>
+        <div class="search-close js-btnMobile-close">
+            <span class="search-close-icon"></span>
+        </div>
+    </div>
+    <div class="Header-search js-searchBar">
+        <input class="searchBar" type="text" placeholder="Buscar...">
+        <a href="#" class="searchButton"><img src="assets/img/sprites/search.svg"></img></a>
+    </div>
+    <a href="#" class="Header-hamburgerFlex js-hamburger">
+        <span class="Header-hamburger" href="#"></span>
+    </a>
+    <div class="Header-navCorporate js-menuMobile">
+        <div>
+            <a href="/informacion-corporativa.html" class="Header-mobileLink {{menu_infcorp}}"><span>Información corporativa</span><span class="icon-arrow"><img src="assets/img/sprites/arrow-grey.svg"></img></span></a>
+            <a href="/press.html" class="Header-mobileLink {{menu_press}}"><span>Sala de prensa</span><span class="icon-arrow"><img src="assets/img/sprites/arrow-grey.svg"></img></span></a>
+            <a href="/about.html" class="Header-mobileLink"><span>Servicio al cliente</span><span class="icon-arrow"><img src="assets/img/sprites/arrow-grey.svg"></img></span></a>
+        </div>
+    </div>
+    <div class="Header-navProducts js-menuMobile">
+        <a href="/" class="Header-mobileLink {{menu_particulares}}">
+            <span>Particulares</span>
+            <span class="icon-arrow"><img src="assets/img/sprites/arrow-grey.svg"></img></span></a>
+        <div class="navProducts-SubMenu">
+            <a href="/particulares-segurovida.html" class="Header-mobileLink navProducts-SubMenuLink {{menu_p_seguro}}">
+                <span class="icon-prod"><img src="assets/img/sprites/Product-P-SeguroVida.svg"></img>
+                </span><span>Seguros de vida</span>
+            </a>
+            <a href="/particulares-pensiones.html" class="Header-mobileLink navProducts-SubMenuLink {{menu_p_pensiones}}">
+                <span class="icon-prod"><img src="assets/img/sprites/Product-P-Pensiones.svg"></img></span>
+                <span>Planes de pensiones</span>
+            </a>
+            <a href="/particulares-ahorro.html" class="Header-mobileLink navProducts-SubMenuLink {{menu_p_ahorro}}">
+                <span class="icon-prod"><img src="assets/img/sprites/Product-P-SeguroAhorro.svg"></img></span>
+                <span>Seguros de ahorro</span>
+            </a>
+            <a href="/particulares-renta.html" class="Header-mobileLink navProducts-SubMenuLink {{menu_p_renta}}">
+                <span class="icon-prod"><img src="assets/img/sprites/Product-P-Renta.svg"></img></span>
+                <span>Rentas vitalicias</span>
+            </a>
+        </div>
+        <a href="/empresas.html" class="Header-mobileLink {{menu_empresas}}">
+            <span>Empresas</span>
+            <span class="icon-arrow"><img src="assets/img/sprites/arrow-grey.svg"></img></span>
+        </a>
+        <div class="navProducts-SubMenu">
+            <a href="/empresas-pensiones.html" class="Header-mobileLink navProducts-SubMenuLink {{menu_e_ahorro}}">
+                <span class="icon-prod"><img src="assets/img/sprites/Product-E-Ahorro.svg"></img></span>
+                <span>Ahorro y previsión</span>
+            </a>
+            <a href="/empresas-empleados.html" class="Header-mobileLink navProducts-SubMenuLink {{menu_e_empleados}}">
+                <span class="icon-prod"><img src="assets/img/sprites/Product-E-Empleados.svg"></img></span>
+                <span>Cobertura empleados</span>
+            </a>
+            <a href="/empresas-pensiones.html" class="Header-mobileLink navProducts-SubMenuLink {{menu_e_pensiones}}">
+                <span class="icon-prod"><img src="assets/img/sprites/Product-E-Pensiones.svg"></img></span>
+                <span>Planes de pensiones</span>
+            </a>
+        </div>
+    </div>
+    <div class="Header-contact js-menuMobile">
+        {% include '../organisms/contact-bar.twig' with {
+            background: 'primary'
+        } %}
+    </div>
+    <div class="Header-SmallLinks js-menuMobile">
+        <ul class="SmallLinks-laCaixa">
+            <li class="SmallLinks-Item"><a href="#"  class="SmallLinks-Link">“CaixaBank”</a></li>
+            <li class="SmallLinks-Item"><a href="#" class="SmallLinks-Link">Obra Social “la Caixa”</a></li>
+        </ul>
+        <div class="SmallLinks-LangSelect">
+            <a href="#" class="SmallLinks-Link SmallLinks-LangTitle js-langTitle"><span class="icon-lang"><img src="assets/img/sprites/language-blue.svg"></img></span><span>ES</span><span class="icon-arrow"><img src="assets/img/sprites/arrow.svg"></img></span></a>
+            <ul class="SmallLinks-Lang js-langContent">
+                <li class="SmallLinks-Item Header-langItem Header-dropdownItem">
+                    <a class="SmallLinks-Link Header-langLink Header-lang-notActive" href="#"><span class="icon-lang"><img src="assets/img/sprites/language-blue.svg"></img></span><span>EN</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="Header-socialMedia js-menuMobile">
+        <ul class="socialMedia-list u-flex u-flex--justifyCenter">
+            <li class="socialMedia-icon"><a href="#" class="socialMedia-link"><img src="assets/img/sprites/facebook.svg"></img></a></li>
+            <li class="socialMedia-icon"><a href="#" class="socialMedia-link"><img src="assets/img/sprites/twitter.svg"></img></a></li>
+            <li class="socialMedia-icon"><a href="#" class="socialMedia-link"><img src="assets/img/sprites/google.svg"></img></a></li>
+            <li class="socialMedia-icon"><a href="#" class="socialMedia-link"><img src="assets/img/sprites/instagram.svg"></img></a></li>
+            <li class="socialMedia-icon"><a href="#" class="socialMedia-link"><img src="assets/img/sprites/linkedin.svg"></img></a></li>
+        </ul>
+    </div>
+</header>
+<div class="hack-Header-background"></div>

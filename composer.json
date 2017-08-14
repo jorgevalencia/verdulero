@@ -1,0 +1,16 @@
+{
+    "name": "runroom/vidacaixa_fase2_styleguide",
+    "license": "proprietary",
+    "type": "project",
+    "config": {
+        "platform": {
+            "php": "7.0.13"
+        }
+    },
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "deployer/deployer": "4.2.1"
+    }
+}

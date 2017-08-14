@@ -1,0 +1,137 @@
+.Banner {
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: space();
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &.noMargin {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint($s960) {
+        margin-bottom: space(2);
+    }
+
+    .Banner-image {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+
+        &::before {
+            background: rgba($c-neutroDark, .4);
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+
+            @include breakpoint($s960) {
+                background: linear-gradient(to right, $c-neutroDark 30%, transparent 60%);
+            }
+        }
+
+        img {
+            max-width: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: auto;
+        }
+    }
+
+    .Banner-wrapper {
+        padding-bottom: space(2);
+        padding-top: space(2);
+        position: relative;
+        z-index: 2;
+
+        @include breakpoint($s480) {
+            padding-bottom: space(4.25);
+            padding-top: space(4.25);
+        }
+    }
+
+    .Banner-title,
+    .Banner-content {
+        color: $c-white;
+
+        @include title-with-shadow();
+    }
+
+    .Banner-content {
+        font-size: get-rems(20px);
+        margin-bottom: space();
+
+        @include breakpoint($s480) {
+            font-size: get-rems(24px);
+        }
+    }
+
+    &.Banner-full {
+        background: $c-neutroDark;
+    }
+
+    &.Banner-box {
+        overflow: hidden;
+
+        .Banner-boxContainer {
+            border-radius: $global-radius;
+            overflow: hidden;
+        }
+
+        .Banner-image {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+
+            &::before {
+                background: rgba($c-neutroDark, .4);
+                bottom: 0;
+                content: '';
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 1;
+
+                @include breakpoint($s960) {
+                    background: linear-gradient(to right, rgba($c-neutroDark, 1) 0, transparent 50%);
+                }
+            }
+
+            img {
+                height: auto;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+
+        .Banner-wrapper {
+            padding-bottom: space();
+            padding-top: space();
+
+            @include breakpoint($s960) {
+                padding-bottom: space(2);
+                padding-top: space(2);
+            }
+
+            @include breakpoint($s1440) {
+                padding-left: space(2);
+                padding-right: space(2);
+            }
+        }
+    }
+}

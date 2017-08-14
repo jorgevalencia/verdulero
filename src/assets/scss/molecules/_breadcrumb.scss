@@ -1,0 +1,62 @@
+.Breadcrumb {
+    color: $c-white;
+    display: none;
+    margin-bottom: space(.5);
+
+    @include breakpoint($s640) {
+        display: block;
+    }
+
+    &.is-dark {
+        color: $c-neutroDark;
+        text-shadow: none;
+
+        .Breadcrumb-item {
+            .Link {
+                .arrow-white {
+                    display: none;
+                }
+
+                .arrow-blue {
+                    display: block;
+                }
+
+                &:hover {
+                    color: $c-primaryDark;
+                }
+            }
+        }
+    }
+
+    .Breadcrumb-item {
+        .Link {
+            font-size: get-rems(14px);
+            font-weight: 100;
+
+            .arrow-blue {
+                display: none;
+            }
+
+            img {
+                margin-right: get-rems(2px);
+                width: get-rems(8px);
+            }
+
+            &:hover {
+                color: $c-white;
+            }
+        }
+
+        &:last-child {
+            .Link {
+                font-weight: bold;
+
+                .arrow-white, .arrow-blue {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include title-with-shadow();
+}

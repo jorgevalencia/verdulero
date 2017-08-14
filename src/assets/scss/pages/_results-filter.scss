@@ -1,0 +1,20 @@
+.Resultados {
+    .Resultados-filter {
+        background-color: $c-neutroLightest;
+        margin-bottom: space();
+        padding-bottom: space(.5);
+        padding-top: space();
+
+        @include breakpoint($s960) {
+            margin-bottom: space(2);
+            padding-bottom: space();
+            padding-top: space(2.5);
+        }
+    }
+
+    .listLinks {
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}

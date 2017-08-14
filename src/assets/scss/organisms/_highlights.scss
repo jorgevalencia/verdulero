@@ -1,0 +1,47 @@
+.highlights-container {
+    margin-bottom: space(2);
+
+    @include breakpoint($s768) {
+        margin-bottom: space(3);
+    }
+
+    @include breakpoint($s1200) {
+        flex-wrap: nowrap;
+    }
+}
+
+.highlights-item {
+    @include breakpoint($s1200) {
+        flex: 1 1 0;
+        margin-right: space(1.5);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &.is-blue {
+        background-color: $c-primary;
+        border-radius: $global-radius;
+        color: $c-white;
+        padding: space();
+    }
+
+    &:last-child {
+        margin-top: space();
+
+        @include breakpoint($s1200) {
+            margin-top: auto;
+        }
+    }
+}
+
+.highlights-itemTitle {
+    border-top: 1px solid $c-neutroLighter;
+    padding: space() 0 0;
+
+    @include breakpoint($s1200) {
+        border-bottom: 1px solid $c-neutroLighter;
+        padding-bottom: space();
+    }
+}

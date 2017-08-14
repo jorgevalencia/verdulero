@@ -1,0 +1,43 @@
+.BlogCard {
+    text-align: left;
+
+    .BlogCard-photo {
+        display: none;
+
+        @include breakpoint($s960) {
+            display: block;
+            margin-bottom: space(.5);
+            width: 100%;
+        }
+    }
+
+    .BlogCard-shared {
+        display: flex;
+        font-size: get-rems(12px);
+        margin-bottom: space(.25);
+        text-transform: uppercase;
+
+        .BlogCard-sharedIcon {
+            align-items: center;
+            display: flex;
+            margin-right: space(.25);
+
+            img {
+                @include icon($c-secondary, 14px);
+            }
+        }
+
+        .BlogCard-sharedNumber {
+            font-weight: $t-default-bold;
+            margin-right: space(.25);
+        }
+
+        .BlogCard-sharedTitle {
+            text-transform: uppercase;
+        }
+    }
+
+    .BlogCard-name {
+        margin-bottom: space(.5);
+    }
+}

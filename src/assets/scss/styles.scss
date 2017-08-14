@@ -1,0 +1,73 @@
+@import "base/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "base/globals";
+@import "base/typography";
+@import "utils/utilities";
+
+.VC-body {
+    // Atoms
+    @import "atoms/buttons";
+    @import "atoms/links";
+    @import "atoms/messages";
+    @import "atoms/elements";
+
+    // Molecules
+    @import "molecules/blogCard";
+    @import "molecules/blogFilter";
+    @import "molecules/solucionesItem";
+    @import "molecules/listProductItem";
+    @import "molecules/anchorsMenu";
+    @import "molecules/breadcrumb";
+    @import "molecules/listLinks";
+    @import "molecules/pagination";
+
+    // Organisms
+    @import "organisms/banner-2";
+    @import "organisms/banner";
+    @import "organisms/benefits";
+    @import "organisms/billboard-product";
+    @import "organisms/billboard-simple";
+    @import "organisms/blog";
+    @import "organisms/contact-bar";
+    @import "organisms/contact-business";
+    @import "organisms/cookies";
+    @import "organisms/egestion";
+    @import "organisms/faq";
+    @import "organisms/featured";
+    @import "organisms/footer";
+    @import "organisms/form";
+    @import "organisms/header-mobile";
+    @import "organisms/header";
+    @import "organisms/highlights";
+    @import "organisms/newsletter";
+    @import "organisms/search";
+    @import "organisms/soluciones";
+    @import "organisms/billboard-product";
+    @import "organisms/contact-business";
+    @import "organisms/distributor";
+    @import "organisms/products-list";
+    @import "organisms/blog-post";
+    @import "organisms/sidemenu";
+    @import "organisms/social";
+    @import "organisms/notes";
+    @import "organisms/slider";
+    @import "organisms/filter";
+    @import "organisms/billboard-question";
+    @import "organisms/form-login";
+    @import "organisms/notes-filtered";
+}
+
+// Templates
+@import "templates/main";
+
+// Pages
+@import "pages/demo";
+@import "pages/basic-page";
+@import "pages/styleguide";
+@import "pages/press";
+@import "pages/results-filter";
+
+// Overrides
+@import "overrides/typography";
+@import "overrides/bootstrap";

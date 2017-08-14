@@ -1,0 +1,400 @@
+.Header-mobile {
+    background-color: $c-white;
+    border-bottom: 1px solid $c-neutroLight;
+    display: flex;
+    flex-wrap: wrap;
+    left: 0;
+    margin-bottom: space(2.5);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+
+    @include breakpoint($s960) {
+        display: none;
+    }
+
+    ul,
+    ol,
+    li {
+        list-style: none;
+    }
+
+    &.is-open {
+        margin-bottom: 0;
+        overflow: scroll;
+        position: static;
+    }
+
+    @media screen and (min-width: $global-max-width + get-pxs(space(2) * 2)) { padding: 0; }
+
+    // LOGO
+    .Header-logo {
+        background-color: $c-white;
+        display: flex;
+        flex: 1;
+        height: space(2);
+        padding-left: space(.5);
+
+        .vidacaixa-logo {
+            display: flex;
+        }
+
+        img {
+            align-self: center;
+            display: flex;
+            height: get-rems(22px);
+            width: get-rems(115.5px);
+        }
+    }
+
+    .Header-search {
+        align-items: center;
+        background-color: $c-neutroLighter;
+        display: flex;
+        flex: 0 0 auto;
+        height: space(2);
+        left: 0;
+        padding: 0 space(.5);
+        position: absolute;
+        top: 0;
+        transition: $global-animation;
+        width: 100%;
+        z-index: -10;
+
+        &.is-open {
+            top: space(2);
+        }
+
+        .searchBar {
+            background-color: $c-neutroLightest;
+            border: solid get-rems(1px) $c-neutroLight;
+            border-radius: get-rems(50px);
+            display: block;
+            height: space(1.5);
+            margin: 0;
+            padding: 0 space(1.5) 0 space();
+            width: 100%;
+        }
+
+        .searchButton {
+            position: absolute;
+            right: get-rems(40px);
+            top: 50%;
+            transform: translateY(-50%);
+
+            img {
+                height: get-rems(22px);
+                width: get-rems(22px);
+            }
+        }
+    }
+
+    .Header-search-btn-mobile {
+        align-items: center;
+        align-self: flex-end;
+        background-color: $c-white;
+        cursor: pointer;
+        display: flex;
+        flex: 0 0 auto;
+        height: space(2);
+        padding: 0 space(.5);
+        position: relative;
+        width: space(2);
+
+        &.is-active {
+            background-color: $c-neutroLighter;
+        }
+
+        .search-open {
+            align-items: center;
+            display: flex;
+
+            img {
+                height: get-rems(22px);
+                width: get-rems(22px);
+            }
+        }
+
+        .search-close {
+            display: none;
+
+            .search-close-icon {
+                position: absolute;
+
+                &::before {
+                    background-color: $c-primaryDark;
+                    content: '';
+                    height: get-pxs(2px);
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transform: rotate(-45deg);
+                    transition: $global-animation;
+                    width: get-pxs(22px);
+                }
+
+                &::after {
+                    background-color: $c-primaryDark;
+                    bottom: get-pxs(-7px);
+                    content: '';
+                    height: get-pxs(2px);
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transform: rotate(45deg);
+                    transition: $global-animation;
+                    width: get-pxs(22px);
+                }
+            }
+        }
+    }
+
+    // MOBILE MENU
+    .Header-mobileLink {
+        align-items: center;
+        border-bottom: 1px solid $c-neutroLight;// there you go!!
+        color: $c-neutroDark;
+        display: flex;
+        font-weight: 300;
+        justify-content: space-between;
+        padding: space(.5);
+
+        // Destkop reset
+        @include breakpoint($s960) {
+            border-bottom: none;
+        }
+
+        &.is-selected {
+            border-left: space(.15) solid $c-secondary;
+            color: $c-secondary;
+            padding-left: space(.45);
+        }
+
+        .icon-arrow {
+            // Mobile Only
+            @include icon ($c-neutroLight, 12px, 12px);
+
+            @include breakpoint($s960) {
+                display: none;
+            }
+        }
+    }
+
+    // DESKTOP CORPORATE MENU
+    .Header-navCorporate {
+        border-top: 2px solid $c-neutroLight;
+        flex: 1 0 100%;
+    }
+
+    // DESKTOP PRODUCTS MENU
+    .Header-navProducts {
+        flex: 1 0 100%;
+
+        // SUBMENU DE PRODUCTOS
+        .navProducts-SubMenu {
+            background-color: $c-neutroLightest;
+        }
+
+        .navProducts-SubMenuLink {
+            background-color: $c-neutroLightest;
+            font-size: get-rems(15px);
+            padding-left: space();
+            position: relative;
+
+            .icon-prod {
+                display: none;
+
+                svg {
+                    margin-left: 0;
+
+                    @include icon ($c-secondary, 30px, 30px);
+                }
+            }
+
+            &.is-selected,
+            &:hover {
+                background-color: $c-neutroLighter;
+                border-left: none;
+            }
+        }
+    }
+
+    // SMALL LINKS
+    .Header-SmallLinks {
+        flex: 1 0 100%;
+
+        .SmallLinks-laCaixa {
+            border-bottom: 1px solid $c-neutroLight;
+            padding: space() 0;
+        }
+
+        .SmallLinks-Item {
+            display: flex;
+            justify-content: center;
+        }
+
+        .SmallLinks-Link {
+            align-items: center;
+            display: flex;
+            padding: space(.5);
+        }
+
+        // Language
+        .SmallLinks-LangSelect {
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            .icon-lang {
+                display: flex;
+                margin-right: space(.25);
+
+                @include icon (currentColor, 24px, 24px);
+            }
+        }
+
+        .SmallLinks-LangTitle {
+            color: $c-neutroDark;
+            display: flex;
+            justify-content: center;
+
+            .icon-arrow {
+                display: none;
+                margin-left: space(.25);
+                transform: rotate(90deg);
+
+                @include icon (currentColor, 10px, 10px);
+            }
+
+            &.is-active {
+                background-color: $c-primary;
+
+                .icon-arrow {
+                    transform: rotate(270deg);
+                }
+            }
+
+            & span {
+                align-self: center;
+                display: flex;
+            }
+        }
+
+        .SmallLinks-Lang {
+            display: flex;
+            position: relative;
+
+            &::before {
+                background: $c-neutroLighter;
+                content: '';
+                display: flex;
+                height: space();
+                left: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: get-rems(.5px);
+            }
+
+            & span {
+                align-self: center;
+                display: flex;
+            }
+        }
+    }
+
+    // CONTACT
+    .Header-contact {
+        flex: 1 0 100%;
+
+        .Contactbar {
+            margin-bottom: 0;
+        }
+    }
+
+    // SOCIAL MEDIA
+    .Header-socialMedia {
+        background-color: $c-neutroLightest;
+        flex: 1 0 100%;
+        padding: space();
+
+        .socialMedia-icon {
+            margin: auto space(.25);
+        }
+    }
+
+    // HAMBUREGER
+    .Header-hamburgerFlex {
+        align-items: center;
+        align-self: flex-end;
+        background-color: $c-white;
+        display: flex;
+        flex: 0 0 auto;
+        height: get-rems(56px);
+        padding: 0 space(.5) 0 space(.25);
+
+        &.is-active {
+            .Header-hamburger {
+                background-color: transparent;
+
+                &::before {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+
+                &::after {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    .Header-hamburger {
+        background-color: $c-primaryDark;
+        display: block;
+        height: get-pxs(3px);
+        position: relative;
+        transition: all .3s ease-in-out;
+        width: get-pxs(29px);
+
+        &::before {
+            background-color: $c-primaryDark;
+            content: '';
+            height: get-pxs(3px);
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: get-pxs(-7px);
+            transition: all .3s ease-in-out;
+            width: get-pxs(29px);
+        }
+
+        &::after {
+            background-color: $c-primaryDark;
+            bottom: get-pxs(-7px);
+            content: '';
+            height: get-pxs(3px);
+            left: 0;
+            position: absolute;
+            right: 0;
+            transition: all .3s ease-in-out;
+            width: get-pxs(29px);
+        }
+    }
+
+    .Header-navCorporate,
+    .Header-navProducts,
+    .Header-SmallLinks,
+    .Header-contact,
+    .Header-socialMedia {
+        display: none;
+
+        &.is-open {
+            display: block;
+        }
+    }
+}

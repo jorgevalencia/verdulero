@@ -1,0 +1,95 @@
+.BillboardProduct {
+    background: $c-neutroLightest;
+    overflow: hidden;
+    padding-bottom: 0;
+    padding-top: space(1.5);
+    position: relative;
+
+    @include breakpoint($s480) {
+        background: $c-neutroLightest;
+    }
+
+    @include breakpoint($s960) {
+        padding-top: space(6);
+    }
+
+    @include breakpoint($s1200) {
+        padding-bottom: space(3);
+    }
+
+    .BreadcrumbList {
+        &:hover,
+        &:active {
+            color: $c-white;
+            text-decoration: none;
+        }
+    }
+
+    .BillboardProduct-image {
+        height: 70%;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+
+        &::before {
+            background: rgba($c-black, .3);
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 10;
+
+            @include breakpoint($s480) {
+                background: rgba($c-black, .1);
+            }
+        }
+
+        img {
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+
+            @include breakpoint($s640) {
+                left: 50%;
+                top: 25%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .BillboardProduct-header {
+        color: $c-white;
+        margin-bottom: space(.5);
+
+        @include breakpoint($s768) {
+            margin-bottom: space(1.5);
+        }
+
+        @include breakpoint(1280px) {
+            padding: 0;
+        }
+
+        h1 {
+            @include title-with-shadow();
+        }
+    }
+
+    .BillboardProduct-info {
+        background-color: $c-white;
+        padding: space(1.5) space(1) space(.5);
+
+        @include breakpoint($s768) {
+            padding: space(3) space(2) space(2);
+        }
+
+        @include breakpoint($s1200) {
+            padding: space(3) space(4.5) space(2);
+        }
+    }
+}

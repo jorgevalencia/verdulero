@@ -1,0 +1,56 @@
+<div class="Notes module">
+    {% include '../molecules/blogFilter.twig'  with {
+        separation: true,
+        justify: 'left',
+        label: 'Los más buscados:',
+        blogCategories: [
+            'Financiera',
+            'Inversiones',
+            'Seguro médico',
+            'VidaCaixa Barcelona',
+            'VidaCaixa España',
+            'Seguros de vida'
+        ],
+    } %}
+    <div class="Notes-wrapper">
+        <a href="#" class="Notes-item">
+            <div class="image">
+                <img src="assets/img/cms/slider-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <span class="date">2015 Abril 26</span>
+                <p class="description">VidaCaixa recibe el premio al mejor fondo de pensiones de renta variable</p>
+            </div>
+        </a>
+        <a href="#" class="Notes-item">
+            <div class="image">
+                <img src="assets/img/cms/slider-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <span class="date">2015 Abril 26</span>
+                <p class="description">VidaCaixa obtuvo un beneficio neto consolidado de 241,4 millones de euros, un 16,2% más</p>
+            </div>
+        </a>
+        <a href="#" class="Notes-item">
+            <div class="image">
+                <img src="assets/img/cms/slider-3.jpg" alt="">
+            </div>
+            <div class="content">
+                <span class="date">2015 Abril 26</span>
+                <p class="description">Pensions Caixa 30 galardonado como el mejor fondo de pensiones español de 2012</p>
+            </div>
+        </a>
+        <a href="#" class="Notes-item">
+            <div class="image">
+                <img src="assets/img/cms/slider-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <span class="date">2015 Abril 26</span>
+                <p class="description">VidaCaixa recibe el premio al mejor fondo de pensiones de renta variable</p>
+            </div>
+        </a>
+    </div>
+    <div class="Notes-CTA">
+        <a class="Button Button--solid bg-primary" href="#">Ver todas las notas de prensa</a>
+    </div>
+</div>

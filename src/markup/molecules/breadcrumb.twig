@@ -1,0 +1,9 @@
+<div class="Breadcrumb {{ class }}" vocab="http://schema.org/" typeof="BreadcrumbList">
+    {% for item in breadcrumb %}
+        <span class="Breadcrumb-item" property="itemListElement" typeof="ListItem">
+            <a property="item" typeof="WebPage" class="Link Link--arrow" href="#">
+                <span property="name">{{item}}</span><img class="arrow-white" src="assets/img/sprites/arrow-white.svg"><img class="arrow-blue" src="assets/img/sprites/arrow-blue.svg"></a>
+            <meta property="position" content="{{loop.index}}">
+        </span>
+    {% endfor %}
+</div>

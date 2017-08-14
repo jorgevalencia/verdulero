@@ -1,0 +1,12 @@
+{% extends '../includes/base.twig' %}
+
+{% block body %}
+<div class="Demo">
+
+    <section class="u-wrapper">
+        <h1>{{ model.staticPage.title }}</h1>
+        <div>{{ model.staticPage.content|raw }}</div>
+    </section>
+
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+<div class="BlogFilter {% if separation %}separation{% endif %}">
+    <div class="BlogFilter-mobile">
+        <p class="BlogFilter-mobileTitle">Selecciona el tema que te interesa</p>
+        <select name="select" class="BlogFilter-select">
+            {% for item in blogCategories %}
+                {% set selected = loop.index0 == 0 %}
+                <option value="{{ item }}" {% if selected %} selected{% endif %} class="BlogFilter-selectItem">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <ul class="BlogFilter-tags {% if justify == 'left' %}left{% else %}center{% endif %}">
+        {% if label %}<span class="BlogFilter-TagsLabel">{{ label }}</span>{% endif %}
+        {% for item in blogCategories %}
+            {% set selected = loop.index0 == 0 %}
+            <li class="BlogFilter-tagsItem{% if selected %} is-selected{% endif %}">
+                <a href="#" class="Button Button--tag BlogFilter-tagsLink{% if selected %} is-selected {% endif %}">{{ item }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

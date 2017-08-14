@@ -1,0 +1,16 @@
+.productsList {
+    margin-bottom: space();
+
+    @include breakpoint($s768) {
+        margin-bottom: space(2);
+    }
+
+    h2 {
+        margin-bottom: space();
+        text-align: center;
+
+        @include breakpoint($s768) {
+            margin-bottom: space(2);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<div href="#" class="listLinks {{ class_hasPhoto }}">
+    {% if photo_name is defined %}
+        <a class="listLinks-img">
+            <img src="assets/img/cms/{{ photo_name }}.jpg" class="u-borderImage"></img>
+        </a>
+    {% endif %}
+    <div class="listLinks-mainContent">
+        <div class="listLinks-text">
+            {% if class_subtitle is defined %}
+                <a href="#" class="listLinks-subtitle {{ class_subtitle }}">{{ link_subtitle }}</a>
+            {% endif %}
+            <a href="#" class="listLinks-title">{{ link_title }}</a>
+        </div>
+        {% if icon_name is defined %}
+            <a href="#" class="listLinks-icon"><img src="assets/img/sprites/list-{{ icon_name }}.svg"></img></a>
+        {% endif %}
+    </div>
+</div>

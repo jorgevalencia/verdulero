@@ -1,0 +1,56 @@
+<div class="Filter">
+    {% if breadcrumbVisible == true %}
+        <div class="Filter-breadcrumb">
+            {% include '../molecules/breadcrumb.twig' with {
+            breadcrumb: ['Inicio','Sala de prensa'],
+            class: 'is-dark'
+            } %}
+        </div>
+    {% endif %}
+    {% if selects == true %}
+        <div class="Filter-fields u-flex u-flex--wrap">
+            <div class="u-flex--s0-12 u-flex--s960-6">
+                <select name="select" class="Select">
+                    <option value="Financiera" selected="" class="BlogFilter-selectItem">Financiera</option>
+                    <option value="Inversiones" class="BlogFilter-selectItem">Inversiones</option>
+                    <option value="Seguro médico" class="BlogFilter-selectItem">Seguro médico</option>
+                    <option value="VidaCaixa Barcelona" class="BlogFilter-selectItem">VidaCaixa Barcelona</option>
+                    <option value="VidaCaixa España" class="BlogFilter-selectItem">VidaCaixa España</option>
+                    <option value="Seguros de vida" class="BlogFilter-selectItem">Seguros de vida</option>
+                </select>
+            </div>
+            <div class="u-flex--s0-12 u-flex--s960-6">
+                <select name="select" class="Select">
+                    <option value="Financiera" selected="" class="BlogFilter-selectItem">Financiera</option>
+                    <option value="Inversiones" class="BlogFilter-selectItem">Inversiones</option>
+                    <option value="Seguro médico" class="BlogFilter-selectItem">Seguro médico</option>
+                    <option value="VidaCaixa Barcelona" class="BlogFilter-selectItem">VidaCaixa Barcelona</option>
+                    <option value="VidaCaixa España" class="BlogFilter-selectItem">VidaCaixa España</option>
+                    <option value="Seguros de vida" class="BlogFilter-selectItem">Seguros de vida</option>
+                </select>
+            </div>
+        </div>
+    {% else %}
+        <div class="Filter-fields u-flex u-flex--wrap">
+            <div class="Filter-fieldsSearch u-flex--s0-12 u-flex--s960-7">
+                <div class="Search">
+                    <input class="Search-bar vc-input" type="text" placeholder="Buscar...">
+                    <a href="#" class="Search-button"><img src="assets/img/sprites/search.svg"></img></a>
+                </div>
+            </div>
+            <div class="u-flex--s0-12 u-flex--s960-5">
+                <select name="select" class="Select">
+                    <option value="Financiera" selected="" class="BlogFilter-selectItem">Financiera</option>
+                    <option value="Inversiones" class="BlogFilter-selectItem">Inversiones</option>
+                    <option value="Seguro médico" class="BlogFilter-selectItem">Seguro médico</option>
+                    <option value="VidaCaixa Barcelona" class="BlogFilter-selectItem">VidaCaixa Barcelona</option>
+                    <option value="VidaCaixa España" class="BlogFilter-selectItem">VidaCaixa España</option>
+                    <option value="Seguros de vida" class="BlogFilter-selectItem">Seguros de vida</option>
+                </select>
+            </div>
+        </div>
+    {% endif %}
+    {% if text is defined %}
+        <p>{{text | raw}}</p>
+    {% endif %}
+</div>

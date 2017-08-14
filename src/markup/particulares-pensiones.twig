@@ -1,0 +1,120 @@
+{% set locale = 'es' %}
+
+<!--MENU - Selected items-->
+{% set menu_infcorp = '' %}
+{% set menu_particulares = 'is-selected' %}
+{% set menu_p_seguro = '' %}
+{% set menu_p_pensiones = 'is-selected' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+
+{% set benefits = {
+    1:{
+        title: 'Periodicidad de aportación flexible',
+        content: 'Podrás decidir la periodicidad que más te convenga: mensual, trimestral, semestral o anual.'
+    },
+    2:{
+        title: 'Ventajas fiscales',
+        content: 'Te beneficiarás de importantes ventajas fiscales en tu declaración de la renta.'
+    },
+    3:{
+        title: 'Contratación de varios planes a la vez',
+        content: 'Podrás combinar varios planes de pensiones y aportar hasta un máximo de 10.000 €/año (12.500 €/año en el caso de los mayores de 50 años).'
+    },
+    4:{
+        title: 'Traspaso de capital de una entidad a otra',
+        content: 'Podrás realizar movilizaciones desde otra entidad al plan que mejor se adapte a tu perfil inversor.'
+    }
+} %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+{% block html_id %}section-Particulares{% endblock %}
+{% block Main_classes %}Main-Productos{% endblock %}
+
+{% block content %}
+
+<div class="Producto">
+
+{% include 'organisms/billboard-product.twig' with {
+    background: 'billboard-particulares-pensiones.jpg',
+    breadcrumb: ['Particulares','Planes de pensiones'],
+    title: 'Planes de pensiones',
+    subtitle: 'Ahorro para la jubilación con interesantes ventajas fiscales',
+    description: '<p>Ahorra para tu jubilación realizando <b>aportaciones periódicas</b> que te permitirán disponer de <b>ingresos complementarios</b> a la pensión pública.</p>
+    <p>Además, al abrir un plan de pensiones no solo estarás ahorrando para tu jubilación si no que también podrás disfrutar desde hoy de las <b>ventajas fiscales</b> que tienen los planes y <b>ahorrar en tu próxima declaración de la renta</b>.</p>
+    <p>Si vives en el País Vasco consulta los Planes de pensiones que te ofrece VidaCaixa en esta otra sección: <a href="#">Planes de previsión social para residentes en el País Vasco</a>.</p>'
+} %}
+
+{% include 'molecules/anchorsMenu.twig' with {
+    products_menu: [ {'name': 'Beneficios', 'id':  'benefits'}, { 'name': 'Modalidades', 'id': 'products'}, { 'name':'Preguntas frecuentes', 'id': 'faq'}, { 'name':'Artículos relacionados', 'id': 'highlights'} ]
+} %}
+
+{% include 'organisms/benefits.twig' with {
+    title: 'Beneficios',
+} %}
+
+<div id="products" class="productsList u-wrapper">
+    <h2>Modalidades</h2>
+    {% include 'molecules/listproduct.twig' with {
+        cols: '5',
+        headings: true,
+        modal_title: 'Destino',
+        modal_edad: 'Todas',
+        modal_riesgo: '4',
+        modal_desc: 'Es una gama de planes orientados a la gestión óptima del ahorro teniendo en cuenta el horizonte temporal de jubilación.',
+        modal_cta: 'Ver productos',
+        product_link: "/empresas-pensiones-destino.html"
+    } %}
+    {% include 'molecules/listproduct.twig' with {
+        cols: '5',
+        modal_title: 'Inversión  Mixta',
+        modal_edad: '+50',
+        modal_riesgo: '4',
+        modal_desc: 'Es una gama de planes en la que se combina la renta fija con la renta variable para ofrecerte la mejor combinación rentabilidad-riesgo.',
+        modal_cta: 'Ver productos',
+        product_link: "#"
+    } %}
+    {% include 'molecules/listproduct.twig' with {
+        cols: '5',
+        modal_title: 'Renta  Variable',
+        modal_edad: '-50',
+        modal_riesgo: '6',
+        modal_desc: 'Es una gama en la que se invierte en planes con vinculación a bolsa para aprovechar el potencial de rentabilidad cuando aún faltan muchos años para tu jubilación.',
+        modal_cta: 'Ver productos',
+        product_link: "#"
+    } %}
+    {% include 'molecules/listproduct.twig' with {
+        cols: '5',
+        modal_title: 'Renta Fija',
+        modal_edad: '+60',
+        modal_riesgo: '3',
+        modal_desc: 'Es una gama de planes en la que se Invierte en mercados monetarios y en renta fija para recoger beneficios cuando faltan pocos años para tu jubilación.',
+        modal_cta: 'Ver productos',
+        product_link: "#"
+    } %}
+    {% include 'molecules/listproduct.twig' with {
+        cols: '2',
+        info: true
+    } %}
+</div>
+
+
+{% include 'organisms/faq.twig' %}
+
+{% include 'organisms/blog.twig' with {
+    blogSubtitle: 'Artículos relacionados que te pueden interesar',
+    cta: false,
+    marginBottom: true
+} %}
+
+{% include 'organisms/highlights.twig' with {
+    class: 'u-wrapper'
+} %}
+
+{% include 'organisms/contact-bar.twig' with {
+    background: 'primary',
+    classes: 'no-margin'
+} %}
+
+{% endblock %}

@@ -1,0 +1,68 @@
+.Egestion {
+    .Egestion-container {
+        margin: 0 auto space();
+
+        @include breakpoint($s960) {
+            align-items: center;
+            border-bottom: 1px solid $c-neutroLight;
+            border-top: 1px solid $c-neutroLight;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: space(3);
+            padding-top: space();
+        }
+    }
+
+    .Egestion-title {
+        align-items: center;
+        display: flex;
+        flex-shrink: 1;
+        margin-bottom: space();
+
+        @include breakpoint($s960) {
+            flex-shrink: 0;
+            margin-right: space();
+        }
+
+        .Egestion-titleText {
+            flex-shrink: 0;
+            margin-right: space(.5);
+
+            @include breakpoint($s960) {
+                flex-shrink: 1;
+                margin-right: 0;
+                width: 100%;
+            }
+        }
+
+        .Egestion-titleLogo {
+            width: get-rems(140px);
+
+            @include breakpoint($s480) {
+                width: 100%;
+            }
+
+            img {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .Egestion-text {
+        margin-bottom: space();
+
+        @include breakpoint($s960) {
+            margin-right: space();
+            max-width: get-rems(680px);
+        }
+    }
+
+    .Egestion-button {
+        margin-bottom: space();
+        width: 100%;
+
+        @include breakpoint($s960) {
+            width: auto;
+        }
+    }
+}

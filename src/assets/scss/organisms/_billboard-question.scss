@@ -1,0 +1,61 @@
+.BillboardQuestion {
+    @include breakpoint($s640) {
+        margin-bottom: space(2);
+    }
+
+    .BillboardQuestion-title {
+        background: linear-gradient(to right, $c-primaryDark 0, $c-primary 100%);
+        color: $c-white;
+        padding: space() 0 space(.5) 0;
+
+        @include breakpoint($s640) {
+            padding: space(2.5) space(2) space(2);
+        }
+
+        h1 {
+            width: 100%;
+
+            @include breakpoint($s640) {
+                width: 90%;
+            }
+
+            @include breakpoint($s960) {
+                width: 80%;
+            }
+
+            @include breakpoint($s1200) {
+                width: 70%;
+            }
+        }
+    }
+
+    .BillboardQuestion-subtitle {
+        .BillboardQuestion-subtitleWrapper {
+            padding: space();
+            position: relative;
+
+            &::before {
+                background: linear-gradient(to bottom, $c-primaryDark 0, $c-primary 100%);
+                content: none;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 2px;
+
+                @include breakpoint($s960) {
+                    content: '';
+                }
+            }
+
+            @include breakpoint($s640) {
+                padding: space(3);
+            }
+        }
+
+        h3 {
+            font-style: italic;
+            font-weight: normal;
+        }
+    }
+}

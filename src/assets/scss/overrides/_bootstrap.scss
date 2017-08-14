@@ -1,0 +1,58 @@
+.VC-body body {
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.Form {
+    input[type="search"] {
+        -webkit-appearance: textfield;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.VC-body li {
+    list-style: none;
+}
+
+section {
+    text-align: left;
+}
+
+form input {
+    padding: 0;
+}
+
+[class*=" icon-"], [class^=icon-] {
+    background-image: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    line-height: inherit;
+    margin-top: 0;
+    vertical-align: inherit;
+    width: auto;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+form {
+    margin-bottom: 0;
+}

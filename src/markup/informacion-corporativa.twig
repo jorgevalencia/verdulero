@@ -1,0 +1,29 @@
+{% set locale = 'es' %}
+
+<!--MENU - Selected items-->
+{% set menu_infcorp = 'is-selected' %}
+{% set menu_particulares = '' %}
+{% set menu_p_seguro = '' %}
+{% set menu_p_pensiones = '' %}
+{% set menu_empresas = '' %}
+{% set menu_e_pensiones = '' %}
+
+{% extends 'includes/base.twig' %}
+{% block html_id %}{% endblock %}
+{% block body_classes %}{% endblock %}
+{% block Main_classes %}{% endblock %}
+
+{% block content %}
+
+<div class="Home">
+
+    <div class="u-wrapper">
+        {% include 'organisms/billboard-text.twig' with {
+            title: 'Información corporativa',
+            subtitle: 'Encuentra todo lo que necesitas saber sobre VidaCaixa.',
+        } %}
+        {% include 'organisms/distributor.twig' %}
+    </div>
+
+
+{% endblock %}

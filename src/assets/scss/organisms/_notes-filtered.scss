@@ -1,0 +1,21 @@
+.NotesFiltered {
+    .NotesFiltered-block {
+        .NotesFiltered-header {
+            align-items: baseline;
+            border-bottom: 1px solid $c-neutroLight;
+            justify-content: space-between;
+
+            @include breakpoint($s640) {
+                display: flex;
+            }
+
+            .Link {
+                margin-bottom: space(.5);
+
+                @include breakpoint($s640) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

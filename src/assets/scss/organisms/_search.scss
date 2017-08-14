@@ -1,0 +1,13 @@
+.Search {
+    .Search-wrapper {
+        margin: 0 auto space(2) auto;
+        max-width: get-rems(720px);
+        padding-left: get-rems(20px);
+        padding-right: get-rems(20px);
+        text-align: center;
+
+        .Search-title {
+            margin-bottom: space(1.5);
+        }
+    }
+}

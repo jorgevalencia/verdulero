@@ -1,0 +1,18 @@
+{% extends 'blog.twig' %}
+
+{% block filter_blog %}
+    {% include '../molecules/blogFilter.twig'  with {
+        blogCategories: [
+            'Todos los temas',
+            'Todo sobre la jubilación',
+            'Ahorro y futuro',
+            'Inversiones',
+            'Déjate orientar por expertos',
+            'Calidad de vida'
+        ],
+    } %}
+{% endblock %}
+
+{% block category_title %}
+    <h4 class="t-h4 Blog-filterTitle">Artículos relacionados con: <strong>Todos los temas</strong></h4>
+{% endblock %}

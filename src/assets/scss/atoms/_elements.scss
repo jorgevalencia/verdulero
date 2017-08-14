@@ -1,0 +1,63 @@
+.Search {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    flex: 0 0 25%;// pon get-rem(~px);
+    justify-content: flex-end;
+    padding: 0;
+    position: relative;
+    top: 0;
+    z-index: 0;
+
+    .Search-bar {
+        background-color: $c-white;
+        border: solid get-rems(1px) $c-neutroLight;
+        border-radius: get-rems(5px);
+        display: block;
+        height: space(2);
+        margin: 0;
+        padding: 0 space(2) 0 space();
+        width: 100%;
+    }
+
+    .Search-button {
+        position: absolute;
+        right: get-rems(20px);
+        top: 50%;
+        transform: translateY(-50%);
+
+        img {
+            height: get-rems(22px);
+            width: get-rems(22px);
+        }
+    }
+}
+
+.Select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: $c-white url('../img/sprites/form-arrow-blue.svg') no-repeat 94% center;
+    border-radius: get-rems(5px);
+    color: $c-neutroDark;
+    font-size: get-rems(16px);
+    height: space(2);
+    padding-left: space();
+    width: 100%;
+
+    &.is-grey {
+        background: $c-white url('../img/sprites/form-arrow-grey.svg') no-repeat 95% center;
+        background-image: get-rems(24px);
+
+        @include breakpoint($s960) {
+            background: $c-white url('../img/sprites/form-arrow-grey.svg') no-repeat 98% center;
+        }
+    }
+
+    @include breakpoint($s960) {
+        background: $c-white url('../img/sprites/form-arrow-blue.svg') no-repeat 97% center;
+    }
+
+    &::-ms-expand {
+        display: none;
+    }
+}

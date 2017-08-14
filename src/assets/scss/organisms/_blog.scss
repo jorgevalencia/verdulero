@@ -1,0 +1,107 @@
+.Blog {
+    background-color: $c-neutroLightest;
+    padding: 0 0 space(2) 0;
+    text-align: center;
+
+    &.Blog--marginBottom {
+        margin-bottom: space(2);
+    }
+
+    .u-wrapper {
+        padding-left: space(.5);
+        padding-right: space(.5);
+
+        @include breakpoint($s768) {
+            padding-left: space(2);
+            padding-right: space(2);
+        }
+
+        @media screen and (min-width: $global-max-width + get-pxs(space(2) * 2)) { padding: 0; }
+    }
+
+    .Blog-container {
+        background-color: $c-white;
+        border: 1px solid $c-neutroLight;
+        border-radius: $global-radius;
+        margin-bottom: space();
+        padding: space(.75);
+
+        @include breakpoint($s480) {
+            padding: space() space(2);
+        }
+    }
+
+    .Blog-title {
+        margin-bottom: 0;
+
+        @include breakpoint($s960) {
+            margin-bottom: space(.5);
+        }
+    }
+
+    .Blog-subTitle {
+        @include breakpoint($s960) {
+            margin-bottom: space(2);
+        }
+    }
+
+    .Blog-articles {
+        animation: article .5s ease-in-out;
+        border-bottom: 1px solid $c-neutroLighter;
+        margin-bottom: space(1.5);
+
+        @keyframes article {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @include breakpoint($s960) {
+            display: flex;
+        }
+    }
+
+    .Blog-card {
+        margin: space() space() space() 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include breakpoint($s960) {
+            flex-basis: 25%;
+        }
+    }
+
+    .Blog-CTA {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            margin-bottom: space();
+        }
+    }
+
+    .Blog-filterTitle {
+        @include breakpoint($s960) {
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.BlogWrapper {
+    background-color: $c-neutroLightest;
+    margin-bottom: space();
+    padding-bottom: space();
+    padding-top: space(3);
+
+    @include breakpoint($s960) {
+        margin-bottom: space(2);
+    }
+}

@@ -1,0 +1,77 @@
+{% set locale = 'es' %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="u-wrapper is-collapse u-flex--wrap">
+    <div class="u-flex--s0-12 u-flex--s960-4">
+        {% include 'organisms/sidemenu.twig' %}
+    </div>
+    <div class="u-flex--s0-12 u-flex--s960-1">
+    </div>
+    <div class="has-sidebar u-wrapper u-flex--s0-12 u-flex--s960-6 u-flex--s1440-7">
+        <div class="Blog-post">
+            <div class="Blog-header">
+                {% include 'molecules/breadcrumb.twig' with {
+                breadcrumb: ['Inicio','Sala de prensa','VidaCaixa crece por encima del sector'],
+                class: 'is-dark'
+                } %}
+                <h1 class="Blog-title">VidaCaixa crece por encima del sector</h1>
+                <div class="Blog-info">
+                    <div class="Blog-infoDate">
+                        <span>Barcelona, 15 de febrero de 2017.</span>
+                    </div>
+                    <ul class="Blog-infoSocial">
+                        <li class="text">compartir</li>
+                        <li class="item"><a href="#"><img src="assets/img/sprites/facebook-original.svg"></img></a></li>
+                        <li class="item"><a href="#"><img src="assets/img/sprites/twitter-original.svg"></img></a></li>
+                        <li class="item"><a href="#"><img src="assets/img/sprites/google-original.svg"></img></a></li>
+                        <li class="item"><a href="#"><img src="assets/img/sprites/linkedin-original.svg"></img></a></li>
+                    </ul>
+                </div>
+                <img src="assets/img/cms/stand.png" alt="">
+            </div>
+            <div class="Blog-content">
+
+                <ul>
+                    <li>VidaCaixa obtuvo un beneficio neto consolidado de 492,3 millones de euros, un 44,6% más que en 2015.</li>
+                    <li>La compañía es líder en planes de pensiones, con una cuota de mercado del 22,9%, y en seguros de vida, con un 30,4% del total de primas.</li>
+                    <li>VidaCaixa se distancia de la competencia en planes de pensiones individuales y crece un 22,3%, hasta alcanzar los 15.715 millones de euros gestionados.</li>
+                    <li>La rentabilidad de los planes de pensiones de VidaCaixa, tanto en el último ejercicio como en el largo plazo, se sitúa por encima del mercado gracias a la gestión activa de las inversiones.</li>
+                    <li>Es la compañía aseguradora española que más recursos gestiona: en 2016 superó los 67.800 millones de euros, un 12,4% más que el año anterior.</li>
+                    <li>La entidad sobrepasó los 4,5 millones de clientes, un 8,2% más.</li>
+                    <li>Cerca de 1 millón de clientes se beneficiaron de las prestaciones abonadas desde VidaCaixa, por un importe total de 3.811 millones.</li>
+                </ul>
+                <ol>
+                    <li>VidaCaixa obtuvo un beneficio neto consolidado de 492,3 millones de euros, un 44,6% más que en 2015.</li>
+                    <li>La compañía es líder en planes de pensiones, con una cuota de mercado del 22,9%, y en seguros de vida, con un 30,4% del total de primas.</li>
+                    <li>VidaCaixa se distancia de la competencia en planes de pensiones individuales y crece un 22,3%, hasta alcanzar los 15.715 millones de euros gestionados.</li>
+                    <li>La rentabilidad de los planes de pensiones de VidaCaixa, tanto en el último ejercicio como en el largo plazo, se sitúa por encima del mercado gracias a la gestión activa de las inversiones.</li>
+                    <li>Es la compañía aseguradora española que más recursos gestiona: en 2016 superó los 67.800 millones de euros, un 12,4% más que el año anterior.</li>
+                    <li>La entidad sobrepasó los 4,5 millones de clientes, un 8,2% más.</li>
+                    <li>Cerca de 1 millón de clientes se beneficiaron de las prestaciones abonadas desde VidaCaixa, por un importe total de 3.811 millones.</li>
+                </ol>
+                <img src="assets/img/cms/stand.png" alt="">
+                <p>VidaCaixa, entidad líder del <a href="#">sector asegurador en España</a>, cerró el ejercicio 2016 con un <b>beneficio neto consolidado de 492,3 millones de euros, un 44,6% más que en 2015</b>. Este crecimiento se debe principalmente al buen comportamiento del segmento individual, tanto de la cartera de ahorro como de la de riesgo, así como de las rentas vitalicias. En términos de resultado recurrente, es decir, excluyendo las operaciones extraordinarias, el crecimiento fue del 29,2%.</p>
+                <p>VidaCaixa se consolida como la <b>mayor compañía de seguros del país</b> y mantiene su liderazgo en <i>planes de pensiones, con una cuota de mercado</i> del 22,9%, según Inverco. También ocupa <strike>la primera posición</strike> en el ranking de seguros de vida, con un 30,4% del total de primas, con datos de ICEA. Durante 2016 comercializó un total de 11.699 millones de euros en primas y aportaciones, lo que supuso un incremento del 28,8%.</p>
+                <quote>En VidaCaixa, damos una respuesta eficaz a través del asesoramiento para nuestros clientes, complementado con la mejor oferta de productos y una profunda convicción de que nuestra actividad aporta un gran valor social.</quote>
+                <p>VidaCaixa cerró el año con un 8,2% más de clientes, hasta superar los <b>4,5 millones</b>. Además, 30 compañías del IBEX 35, 385 organismos públicos y más de 900 multinacionales son clientes de VidaCaixa.</p>
+
+                <h3>Ranking Vida – Total Primas</h3>
+                <p>VidaCaixa avanzó 2,4 puntos en la cuota del total de primas comercializadas, hasta alcanzar un 30,4% durante 2016. La compañía consolida su liderazgo en Vida con un crecimiento muy superior al del mercado, creciendo más de 10 puntos por encima del sector (un 32,2% frente al 21,7%).</p>
+
+                <h3>Rentabilidades superiores a las del mercado</h3>
+                <p>La rentabilidad de los planes de pensiones de VidaCaixa, tanto en el último ejercicio como en el largo plazo, se sitúa por encima del mercado gracias a la gestión discrecional de las inversiones. Sin considerar los garantizados, <b>la rentabilidad media de los planes del sistema individual se situó en el 1,85%, frente al 1,57% de la media del mercado</b>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'organisms/contact-bar.twig' with {
+    background: 'primary',
+    classes: 'no-margin'
+} %}
+
+{% endblock %}

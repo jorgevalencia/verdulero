@@ -1,0 +1,88 @@
+{% set locale = 'es' %}
+
+{% extends 'includes/base.twig' %}
+{% import 'helpers/macros.twig' as macros %}
+
+{% block content %}
+
+<div class="QA">
+    {% include 'organisms/billboard-question.twig' with {
+        breadcrumbVisible: false,
+        selects: true
+    } %}
+
+    <div class="wysiwyg">
+        <div class="u-wrapper">
+            <script id="infogram_0_consumer_survey_for_building_experts" title="Consumer Survey for Building Experts" src="//e.infogram.com/js/dist/embed.js?VQt" type="text/javascript"></script>
+        </div>
+    </div>
+
+
+    {% include 'molecules/anchorsMenu.twig' with {
+        products_menu: [ {'name': 'Respuesta', 'id':  'respuesta'}, { 'name': 'Productos recomendados', 'id': 'products'}, { 'name':'Preguntas frecuentes', 'id': 'faq'}, { 'name':'Artículos relacionados', 'id': 'highlights'} ]
+    } %}
+
+    <div id="products" class="productsList u-wrapper">
+        <h2>Productos recomendados</h2>
+        {% include 'molecules/listproduct.twig' with {
+            cols: '4',
+            QA_title: 'Planes de Pensiones',
+            QA_titleInfo: 'Generar un ahorro destinado para el momento de la jubilación, con el cual podrá complementar la pensión de la Seguridad Social.',
+            QA_descTitle1: 'Disponibilidad',
+            QA_descInfo1: 'En la fecha de jubilación, aunque puede anticiparse por otras situaciones concretas.',
+            QA_descTitle2: 'Otros beneficios',
+            QA_descInfo2: 'Importantes ventajas en la declaración de la renta.',
+            QA_cta: 'Ver modalidades'
+        } %}
+        {% include 'molecules/listproduct.twig' with {
+            cols: '4',
+            QA_title: 'Planes de Pensiones',
+            QA_titleInfo: 'Generar un ahorro destinado para el momento de la jubilación, con el cual podrá complementar la pensión de la Seguridad Social.',
+            QA_descTitle1: 'Disponibilidad',
+            QA_descInfo1: 'En la fecha de jubilación, aunque puede anticiparse por otras situaciones concretas.',
+            QA_descTitle2: 'Otros beneficios',
+            QA_descInfo2: 'Importantes ventajas en la declaración de la renta.',
+            QA_cta: 'Ver modalidades'
+        } %}
+        {% include 'molecules/listproduct.twig' with {
+            cols: '4',
+            QA_title: 'Planes de Pensiones',
+            QA_titleInfo: 'Generar un ahorro destinado para el momento de la jubilación, con el cual podrá complementar la pensión de la Seguridad Social.',
+            QA_descTitle1: 'Disponibilidad',
+            QA_descInfo1: 'En la fecha de jubilación, aunque puede anticiparse por otras situaciones concretas.',
+            QA_descTitle2: 'Otros beneficios',
+            QA_descInfo2: 'Importantes ventajas en la declaración de la renta.',
+            QA_cta: 'Ver modalidades'
+        } %}
+
+    </div>
+
+    {% include 'organisms/faq.twig' %}
+
+    {% include 'organisms/banner.twig' with {
+        class: 'u-marginBlocks noMargin'
+    } %}
+
+    <div class="BlogWrapper">
+        <div class="u-wrapper">
+            {% include 'organisms/blog.twig' with {
+                blogSubtitle: 'Artículos relacionados que te pueden interesar',
+                cta: false,
+            } %}
+        </div>
+    </div>
+
+
+    {% include 'organisms/highlights.twig' with {
+        class: 'u-wrapper'
+    } %}
+
+    {% include 'organisms/contact-bar.twig' with {
+        background: 'primary',
+        classes: 'no-margin'
+    } %}
+
+</div>
+
+
+{% endblock %}

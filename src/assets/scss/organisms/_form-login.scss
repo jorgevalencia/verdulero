@@ -1,0 +1,38 @@
+.formLogin {
+    border-bottom: solid 1px $c-neutroLight;
+    margin-bottom: space();
+    padding: 0;
+
+    @include breakpoint($s960) {
+        margin-bottom: space(2);
+    }
+
+    &.formContact {
+        border-bottom: none;
+    }
+
+    .Message {
+        display: none;
+    }
+
+    // .Form-errorMessage {
+    //     display: none;
+    // }
+
+    .formLogin-title {
+        margin-bottom: space();
+    }
+
+    .formLogin-field {
+        margin-bottom: space();
+
+        &.custom-checkbox {
+            margin-bottom: 0;
+        }
+
+        .formLogin-fieldLink {
+            display: block;
+            margin-bottom: space(.5);
+        }
+    }
+}

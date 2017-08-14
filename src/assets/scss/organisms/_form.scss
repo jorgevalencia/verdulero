@@ -1,0 +1,225 @@
+form {
+    margin-bottom: space();
+
+    @include breakpoint($s960) {
+        margin-bottom: space(2);
+    }
+}
+
+label,
+input,
+textarea,
+.Form-error,
+.custom-select {
+    display: block;
+    margin-bottom: space();
+    width: 100%;
+}
+
+label {
+    color: $c-neutroDark;
+    font-size: get-rems(16px);
+    font-weight: $t-default-regular;
+    margin-bottom: get-rems(10px);
+}
+
+input,
+textarea,
+.custom-select,
+textarea.vc-input,
+input.vc-input {
+    border: 1px solid $c-neutroLight;
+    border-radius: get-rems(5px);
+    color: $c-black;
+    font-family: $t-default;
+    font-size: get-rems(16px);
+    font-weight: $t-default-regular;
+    height: auto;
+    line-height: 1;
+    padding: get-rems(16px) space(.75);
+    width: 100%;
+
+    &:focus {
+        background-color: $c-neutroLightest;
+    }
+
+    @include placeholderColor($c-neutro);
+
+    &.success {
+        border-color: $c-success;
+    }
+
+    // &.error {
+    // }
+}
+
+.Form-error {
+    input, textarea, .custom-select {
+        border-color: $c-neutroLight;
+        margin-bottom: 0;
+    }
+
+    .Form-errorMessage {
+        background-color: $c-error;
+        border-radius: get-rems(5px);
+        bottom: get-rems(-14px);
+        color: $c-white;
+        display: none;
+        font-size: get-rems(12px);
+        padding: 0 space(.5);
+        position: relative;
+        top: get-rems(6px);
+
+        &::before {
+            border-color: transparent transparent $c-error;
+            border-style: solid;
+            border-width: 0 get-rems(8px) get-rems(6px);
+            content: '';
+            height: 0;
+            position: absolute;
+            top: get-rems(-5px);
+            width: 0;
+        }
+    }
+
+    &.visible {
+        input, select, textarea, .custom-select {
+            border-color: $c-error;
+        }
+
+        .Form-errorMessage {
+            display: inline-block;
+        }
+    }
+}
+
+.custom-select {
+    background: #fff url("/assets/img/form-dropdown.png") no-repeat right 20px center;
+    background-size: 22px;
+    border: 1px solid $c-neutroLight;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 0;
+
+    select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        background-image: none;
+        border: none;
+        box-shadow: none;
+        color: $c-neutroDark;
+        font-size: get-rems(16px);
+        font-weight: $t-default-regular;
+        padding: get-rems(18px) get-rems(16px) get-rems(18px) get-rems(18px);
+        width: 100%;
+    }
+}
+
+.custom-checkbox {
+    // Base for label styling
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        left: -9999px;
+        position: absolute;
+    }
+
+    [type="checkbox"]:not(:checked) + label,
+    [type="checkbox"]:checked + label {
+        cursor: pointer;
+        padding-left: get-rems(32px);
+        position: relative;
+    }
+
+    // checkbox aspect
+    [type="checkbox"]:not(:checked) + label::before,
+    [type="checkbox"]:checked + label::before {
+        background: $c-white;
+        border: get-rems(2px) solid $c-neutroLight;
+        border-radius: get-rems(4px);
+        box-shadow: inset 0 get-rems(1px) get-rems(2px) rgba(0, 0, 0, .1);
+        content: '';
+        height: get-rems(18px);
+        left: get-rems(5px);
+        position: absolute;
+        top: get-rems(1px);
+        width: get-rems(18px);
+    }
+
+    // checked mark aspect
+    [type="checkbox"]:not(:checked) + label::after,
+    [type="checkbox"]:checked + label::after {
+        color: $c-primary;
+        content: '✔';
+        font-size: get-rems(20px);
+        left: get-rems(9px);
+        line-height: .8;
+        position: absolute;
+        top: 0;
+        transition: all .2s;
+    }
+
+    // checked mark aspect changes
+    [type="checkbox"]:not(:checked) + label::after {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    [type="checkbox"]:checked + label::after {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    // disabled checkbox
+    [type="checkbox"]:disabled:not(:checked) + label::before,
+    [type="checkbox"]:disabled:checked + label::before {
+        background-color: $c-neutroLight;
+        border-color: $c-neutro;
+        box-shadow: none;
+    }
+
+    [type="checkbox"]:disabled:checked + label::after {
+        color: $c-neutro;
+    }
+
+    [type="checkbox"]:disabled + label {
+        color: $c-neutroLight;
+    }
+
+    // hover style just for information
+    label:hover::before {
+        border: 2px solid $c-neutro !important;
+    }
+
+    .custom-checkboxLabel {
+        font-size: get-rems(12px);
+
+        a {
+            color: $c-primary;
+        }
+    }
+}
+
+.SearchBar {
+    position: relative;
+
+    .SearchBar-input {
+        background-color: $c-neutroLightest;
+        border-radius: get-rems(100px);
+        margin: 0;
+        padding: get-rems(22px) get-rems(74px) get-rems(22px) get-rems(26px);
+    }
+
+    .SearchBar-icon {
+        position: absolute;
+        right: space();
+        top: 50%;
+        transform: translateY(-50%);
+
+        img {
+            height: get-rems(26px);
+            width: get-rems(26px);
+        }
+    }
+}

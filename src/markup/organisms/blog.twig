@@ -1,0 +1,49 @@
+<div class="Blog module {% if marginBottom %}Blog--marginBottom{% endif %} ">
+    <div class="">
+        <h2 class="t-h2 Blog-title logo-title"><span>Blog</span> <span class="vidaCaixa-logo"><img src="assets/img/sprites/vidaCaixa-logo.svg"></img></span></h2>
+        <h4 class="t-h4 Blog-subTitle">{{ blogSubtitle }}</h4>
+        {% block filter_blog %}{% endblock %}
+        <div class="Blog-container">
+            {% block category_title %}{% endblock %}
+            <div class="Blog-articles">
+                {% include '../molecules/blogCard.twig' with {
+                    blogCard_class: 'Blog-card',
+                    blogCard_photo: 'blog-1.jpg',
+                    blogCard_sharedNumber: '654',
+                    blogCard_name: 'Las 10 preguntas que debes hacerte antes de jubilarte',
+                } %}
+                {% include '../molecules/blogCard.twig' with {
+                    blogCard_class: 'Blog-card',
+                    blogCard_photo: 'blog-2.jpg',
+                    blogCard_sharedNumber: '357',
+                    blogCard_name: 'Claves de la jubilación anticipada para autónomos',
+                } %}
+                {% include '../molecules/blogCard.twig' with {
+                    blogCard_class: 'Blog-card',
+                    blogCard_photo: 'blog-3.jpg',
+                    blogCard_sharedNumber: '145',
+                    blogCard_name: 'Cómo mantener el nivel de vida una vez jubilados',
+                } %}
+                {% include '../molecules/blogCard.twig' with {
+                    blogCard_class: 'Blog-card',
+                    blogCard_photo: 'blog-4.jpg',
+                    blogCard_sharedNumber: '65',
+                    blogCard_name: '¿Cómo tributan los planes de pensiones?',
+                } %}
+            </div>
+            <div class="Blog-CTA">
+                {% if cta %}
+                    <a href="#" class="Link Link--arrow c-primary "><span>Ver todos los artículos relacionados</span><img src="assets/img/sprites/arrow-blue.svg"></img></a>
+                {% endif %}
+                <a href="#" class="Button Button--solid bg-secondary">Ir al Blog de VidaCaixa</a>
+            </div>
+        </div>
+        {% include '../organisms/newsletter.twig' with {
+            type: 'is-halfHalf',
+            title: 'Suscríbete a nuestra newsletter',
+            description: 'Aprenderás a disfrutar de tu futuro sin preocupaciones.',
+            placeholder: 'Introduce tu email',
+            link: '#',
+        } %}
+    </div>
+</div>

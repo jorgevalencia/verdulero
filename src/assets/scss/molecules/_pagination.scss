@@ -1,0 +1,75 @@
+.Pagination {
+    margin-bottom: space();
+    text-align: center;
+
+    @include breakpoint($s640) {
+        margin-bottom: space(4);
+    }
+
+    ul {
+        border: solid $c-neutroLight;
+        border-width: 1px 0;
+        display: none;
+        margin: 0 auto;
+        padding: space() 0;
+
+        @include breakpoint($s640) {
+            display: block;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: space(2);
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.active {
+                a {
+                    color: $c-neutroDark;
+                    cursor: default;
+                }
+            }
+
+            &.more {
+                color: $c-neutroDark;
+                font-weight: bold;
+            }
+
+            a {
+                font-size: get-rems(18px);
+                font-weight: bold;
+
+                img {
+                    height: get-rems(18px);
+                    position: relative;
+                    top: 3px;
+                    width: get-rems(12px);
+
+                    &.rotate {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .Pagination-nextButton {
+        border-top: 1px solid $c-neutroLighter;
+        display: block;
+        padding: space(2) space() space();
+
+        @include breakpoint($s640) {
+            display: none;
+        }
+
+        img {
+            display: inline-block;
+            height: get-rems(16px);
+            margin-left: space(.25);
+            position: relative;
+            width: get-rems(10px);
+        }
+    }
+}

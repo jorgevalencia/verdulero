@@ -1,0 +1,332 @@
+.Featured {
+    margin-bottom: space(2);
+
+    .Featured-title {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include breakpoint($s640) {
+            flex-wrap: nowrap;
+        }
+
+        .vidaCaixa-logo {
+            height: get-rems(50px);
+            margin: get-rems(10px);
+
+            svg {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+
+    .Featured-container {
+        @include breakpoint($s1200) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .Featured-item {
+        color: $c-white;
+        overflow: hidden;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        width: 100%;
+
+        @include breakpoint($s1024) {
+            display: flex;
+            min-height: calc(100vh - 196px);
+        }
+
+        .Featured-itemVideo {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100vw;
+
+            video {
+                height: 100%;
+                left: 18%;
+                position: absolute;
+                top: 0;
+                transform: translateX(-50%);
+                width: auto;
+            }
+        }
+
+        .Featured-itemImage {
+            background-color: $c-primaryDark;
+            background-position: center;
+            background-size: cover;
+            opacity: 1;
+            overflow: hidden;
+            position: absolute;
+            transition: $global-animation;
+            width: 100vw;
+            z-index: 1;
+
+            @include breakpoint($s1024) {
+                height: 100%;
+                position: relative;
+            }
+
+            img {
+                width: 100%;
+
+                @include breakpoint($s1024) {
+                    height: 100%;
+                    left: 18%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: auto;
+                }
+
+                // stylelint-disable
+                @media screen and ( max-height: 700px ){
+                    height: auto;
+                    top: 80%;
+                    width: 100%;
+                }
+                // stylelint-enable
+            }
+
+            @include breakpoint($s1024) {
+                position: absolute;
+            }
+        }
+
+        &::before {
+            background-color: rgba($c-black, .4);
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: $global-animation;
+            width: 100%;
+            z-index: 2;
+        }
+
+        @include breakpoint($s1024) {
+            flex-basis: 0;
+            flex-grow: 1;
+            width: auto;
+        }
+
+        .Featured-itemWrapper {
+            border-bottom: 1px solid $c-white;
+            position: relative;
+            z-index: 3;
+
+            @include breakpoint($s1024) {
+                border-bottom: none;
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: space();
+                padding-right: space();
+            }
+
+            @include breakpoint($s1200) {
+                padding-left: space(1.5);
+                padding-right: space(1.75);
+            }
+        }
+
+        .Featured-itemSlide {
+            background-color: $c-white;
+            color: $c-neutroDark;
+            display: none;
+            overflow: hidden;
+            transition: $global-animation;
+
+            &.visible {
+                display: block;
+            }
+
+            @include breakpoint($s1024) {
+                background-color: transparent;
+                color: $c-white;
+            }
+        }
+
+        .Featured-itemTitle {
+            @include fluid-type(20px, 48px);
+            @include title-with-shadow();
+
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 0;
+            padding: space() space(2) space(1.75);
+            position: relative;
+            text-align: center;
+
+            @include breakpoint($s640) {
+                padding: space() space(.5) space(3) space(.5);
+            }
+
+            @include breakpoint($s1024) {
+                align-self: flex-end;
+                margin-bottom: space();
+                padding: 0;
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+        .Featured-itemMoreinfo {
+            display: block;
+            font-weight: bold;
+            text-align: center;
+
+            .text {
+                font-size: get-rems(12px);
+                margin-bottom: 0;
+                opacity: 1;
+                transition: $global-animation;
+
+                &.visible {
+                    height: auto;
+                    opacity: 0;
+                }
+            }
+
+            .arrow {
+                display: inline-block;
+                margin-bottom: get-rems(10px);
+                transform: rotate(90deg);
+                transition: $global-animation;
+                width: get-rems(14px);
+
+                &.rotate {
+                    transform: rotate(-90deg);
+                }
+            }
+
+            @include breakpoint($s1024) {
+                display: none;
+            }
+        }
+
+        .Featured-itemSubtitle {
+            display: none;
+            font-weight: bold;
+            margin-bottom: space();
+            margin-top: space(.5);
+            padding-bottom: space();
+            position: relative;
+
+            @include breakpoint($s1024) {
+                display: block;
+            }
+
+            @include breakpoint($s1200) {
+                margin-bottom: space(2);
+            }
+
+            &::after {
+                background-color: $c-white;
+                bottom: 0;
+                content: '';
+                display: block;
+                height: get-rems(2px);
+                position: absolute;
+                width: get-rems(60px);
+            }
+        }
+
+        .Featured-itemList {
+            padding: space() space() 0;
+
+            @include breakpoint($s1024) {
+                padding: 0;
+            }
+        }
+
+        .Featured-itemList li span {
+            padding-right: space(1.25);
+            position: relative;
+
+            &:hover {
+                .Featured-itemArrow {
+                    right: get-rems(-5px);
+                }
+            }
+        }
+
+        .Featured-itemArrow {
+            position: absolute;
+            right: 5px;
+            top: 40%;
+            transform: translateX(-50%);
+            transition: $global-animation;
+            width: get-rems(10px);
+
+            &.desktop {
+                display: none;
+
+                @include breakpoint($s1024) {
+                    display: block;
+                }
+            }
+
+            &.mobile {
+                display: block;
+
+                @include breakpoint($s1024) {
+                    display: none;
+                }
+            }
+        }
+
+        .Featured-itemList li a {
+            color: $c-primary;
+            margin-bottom: space();
+
+            @include breakpoint($s1024) {
+                color: $c-white;
+                font-weight: bold;
+                margin-bottom: space(.75);
+            }
+
+            @include breakpoint($s1200) {
+                margin-bottom: space();
+            }
+        }
+
+        &.Featured-item--notHover {
+            &::before {
+                background-color: rgba($c-black, .85);
+                z-index: 4;
+            }
+        }
+
+        &.Featured-item--hover {
+            &::before {
+                background-color: rgba($c-black, .4);
+                z-index: 2;
+            }
+
+            .Featured-itemWrapper {
+                align-items: center;
+                display: flex;
+            }
+
+            .Featured-itemImage {
+                opacity: 0;
+            }
+
+            .Featured-itemTitle {
+                display: none;
+            }
+
+            .Featured-itemSlide {
+                display: block;
+            }
+        }
+    }
+}
